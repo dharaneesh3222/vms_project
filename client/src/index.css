@@ -275,17 +275,18 @@ select.form-control-custom option {
 /* Buttons style */
 .btn-primary-custom {
   background: var(--visitor-gradient);
-  border: none;
+  border: 1px solid rgba(255, 255, 255, 0.15);
   color: #fff;
   font-weight: 600;
   padding: 12px 24px;
   border-radius: 10px;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  transition: all 0.2s ease;
 }
 
 .btn-primary-custom:hover {
   transform: translateY(-1px);
-  box-shadow: 0 4px 15px rgba(59, 130, 246, 0.4);
+  border-color: rgba(59, 130, 246, 0.8);
+  box-shadow: 0 4px 15px rgba(59, 130, 246, 0.4), 0 0 12px rgba(59, 130, 246, 0.6);
 }
 
 .btn-primary-custom:active {
