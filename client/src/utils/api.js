@@ -1,4 +1,13 @@
-export const BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000/api';
+let rawUrl = import.meta.env.VITE_API_URL || 'http://localhost:5000/api';
+// Bulletproof check: automatically append /api if the user forgot to add it in Vercel
+if (rawUrl && !rawUrl.endsWith('/api')) {
+  // Strip trailing slash if it exists before adding /api
+  if (rawUrl.endsWith('/')) {
+    rawUrl = rawUrl.slice(0, -1);
+  }
+  rawUrl += '/api';
+}
+export const BASE_URL = rawUrl;
 
 async function request(endpoint, options = {}) {
   const token = localStorage.getItem('vms_token');
