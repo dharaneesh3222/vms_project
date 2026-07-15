@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate, useSearchParams, Link } from 'react-router-dom';
 import { Shield, Mail, Lock, LogIn, AlertCircle, Sparkles, Key, ArrowLeft, Eye, EyeOff } from 'lucide-react';
-import { api } from '../utils/api';
+import { api, BASE_URL } from '../utils/api';
 
 export default function Login() {
   const navigate = useNavigate();
@@ -77,7 +77,10 @@ export default function Login() {
             {/* Login Form Card */}
             <div className="glass-card p-4 animate-slide-up h-100">
               <h2 className="h4 fw-bold text-center mb-1 text-white">Staff Authentication</h2>
-              <p className="small text-secondary text-center mb-4">Access your department portal</p>
+              <p className="small text-secondary text-center mb-0">Access your department portal</p>
+              <p className="small text-center mb-4" style={{ color: '#ff6b6b', fontSize: '0.75rem', wordBreak: 'break-all' }}>
+                DEBUG URL: {BASE_URL}
+              </p>
 
               {error && (
                 <div className="alert alert-danger py-2 px-3 small d-flex align-items-center gap-2 mb-3">
