@@ -24,6 +24,12 @@ export default function Login() {
     e?.preventDefault();
     setError('');
     setInfoMsg('');
+
+    if (!selectedRole) {
+      setError('Please select a role from the right panel before authenticating.');
+      return;
+    }
+
     setIsLoading(true);
 
     try {
