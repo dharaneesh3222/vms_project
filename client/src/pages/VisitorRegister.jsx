@@ -171,7 +171,7 @@ export default function VisitorRegister() {
       </header>
 
       {/* Body Form */}
-      <main className="flex-grow-1 container py-5" style={{ maxWidth: '800px' }}>
+      <main className="flex-grow-1 container py-5" style={{ maxWidth: '1050px' }}>
         <div className="glass-card p-4 p-md-5 animate-slide-up">
           
           <div className="mb-4">
