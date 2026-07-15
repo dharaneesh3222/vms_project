@@ -1,0 +1,32 @@
+[
+  {
+    "id": "vis_mrk74w88-rw2jo71k1",
+    "createdAt": "2026-07-14T05:14:02.408Z",
+    "updatedAt": "2026-07-14T05:15:22.417Z",
+    "visitId": "vis_mrk71x6g-uar8pk0mn",
+    "badgeNumber": "B-99",
+    "issuedAt": "2026-07-14T05:14:02.407Z",
+    "returnedAt": "2026-07-14T05:15:22.411Z",
+    "issuedBy": "use_mrk6u8uk-93bcj79h9"
+  },
+  {
+    "id": "vis_mrkatrhr-bxiwk994p",
+    "createdAt": "2026-07-14T06:57:21.519Z",
+    "updatedAt": "2026-07-14T10:56:32.624Z",
+    "visitId": "vis_mrk89jhb-aahrfj7zh",
+    "badgeNumber": "B-102",
+    "issuedAt": "2026-07-14T06:57:21.515Z",
+    "returnedAt": "2026-07-14T10:56:32.622Z",
+    "issuedBy": "use_mrk6u8uk-93bcj79h9"
+  },
+  {
+    "id": "vis_mrkht17w-a5nqss7qu",
+    "createdAt": "2026-07-14T10:12:44.780Z",
+    "updatedAt": "2026-07-14T10:12:44.780Z",
+    "visitId": "vis_mrkhixzx-q70b71hr6",
+    "badgeNumber": "B-139",
+    "issuedAt": "2026-07-14T10:12:44.779Z",
+    "returnedAt": null,
+    "issuedBy": "use_mrk6u8uk-93bcj79h9"
+  }
+]

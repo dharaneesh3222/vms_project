@@ -1,0 +1,30 @@
+[
+  {
+    "id": "set_mrk6u9hh-g6rnlf0dx",
+    "createdAt": "2026-07-14T05:05:46.373Z",
+    "updatedAt": "2026-07-14T05:05:46.373Z",
+    "key": "companyName",
+    "value": "Acme Corporation"
+  },
+  {
+    "id": "set_mrk6u9i1-qac60m8sf",
+    "createdAt": "2026-07-14T05:05:46.393Z",
+    "updatedAt": "2026-07-14T05:05:46.393Z",
+    "key": "allowSelfRegistration",
+    "value": "true"
+  },
+  {
+    "id": "set_mrk6u9ik-zx1bb6u4n",
+    "createdAt": "2026-07-14T05:05:46.412Z",
+    "updatedAt": "2026-07-14T05:05:46.412Z",
+    "key": "requireIdProof",
+    "value": "true"
+  },
+  {
+    "id": "set_mrk6u9j0-438wayoa2",
+    "createdAt": "2026-07-14T05:05:46.428Z",
+    "updatedAt": "2026-07-14T05:05:46.428Z",
+    "key": "emergencyContact",
+    "value": "+1800-555-0199"
+  }
+]

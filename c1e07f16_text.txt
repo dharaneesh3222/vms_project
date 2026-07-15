@@ -1,0 +1,374 @@
+--- PAGE 1 ---
+Visitor Management System ⭐⭐⭐⭐⭐
+Project Overview
+A Visitor Management System (VMS) is a secure web-based application that digitizes
+the process of managing visitors entering an organization. Instead of maintaining paper
+registers, visitors can register online or at a reception kiosk, employees receive approval
+requests instantly, security personnel verify visitor identity using QR codes, and all visitor
+activities are logged for security and auditing purposes.
+The system improves security, efficiency, visitor experience, and compliance by
+maintaining real-time visitor records and automating the complete check-in/check-out
+workflow.
+Objectives
+Eliminate manual visitor registers.
+Improve office security.
+Enable quick visitor approvals.
+Reduce waiting time at reception.
+Generate digital visitor passes.
+Track visitor movements inside the organization.
+Maintain complete security audit logs.
+Users
+1. Visitor
+Register visit details
+Upload ID proof
+View visit status
+Download visitor pass
+QR-based check-in/check-out
+2. Employee
+Receive visitor requests
+Approve or reject visitors
+Schedule meetings
+
+--- PAGE 2 ---
+View visitor history
+Notify reception
+3. Receptionist
+Register walk-in visitors
+Verify visitor identity
+Print visitor badge
+Manage visitor queue
+Assign meeting room
+4. Security Guard
+Scan QR code
+Allow entry
+Verify visitor
+Monitor exits
+View active visitors
+5. Admin
+Manage employees
+Manage departments
+Configure system
+Generate reports
+View security logs
+Manage meeting rooms
+Complete Workflow
+Step 1: Visitor Registration
+Visitor enters:
+Name
+Mobile Number
+Email
+Company Name
+Purpose of Visit
+
+--- PAGE 3 ---
+Department
+Employee to Meet
+Date & Time
+ID Proof Upload
+Photo Capture
+System validates all information.
+Step 2: Employee Approval
+Employee receives notification.
+Options:
+Approve
+Reject
+Request Reschedule
+If approved:
+QR Code generated
+Visitor pass created
+Email/SMS sent
+Step 3: QR Check-in
+Visitor arrives.
+Reception:
+Scan QR
+Verify ID
+Capture arrival time
+Print visitor badge
+Status changes:
+Pending → Checked-In
+Step 4: Meeting Room Allocation
+Reception assigns:
+Meeting Room
+
+--- PAGE 4 ---
+Floor
+Building
+Time Slot
+System checks room availability.
+Step 5: Visit Tracking
+During visit:
+Meeting started
+Meeting ended
+Room occupied
+Security monitoring
+Live dashboard shows:
+Active Visitors
+Available Rooms
+Employees in Meeting
+Step 6: QR Check-out
+Visitor scans QR while leaving.
+System records:
+Exit Time
+Visit Duration
+Badge Returned
+Feedback
+Status:
+Checked-In → Checked-Out
+Main Modules
+1. Visitor Module
+Features
+Online Registration
+Walk-in Registration
+
+--- PAGE 5 ---
+Visitor Pass
+QR Generation
+Visit History
+ID Upload
+Photo Capture
+Check-in
+Check-out
+2. Employee Approval Module
+Features
+Instant Notifications
+Accept/Reject
+Schedule Meeting
+View Calendar
+Visitor History
+Emergency Contact
+3. QR Check-in Module
+Features
+QR Scanner
+Visitor Verification
+Identity Verification
+Entry Recording
+Exit Recording
+Badge Printing
+4. Meeting Room Module
+Features
+Room Booking
+Room Availability
+Meeting Schedule
+Auto Allocation
+Time Slot Management
+Room Utilization Report
+
+--- PAGE 6 ---
+5. Security Management Module
+Features
+Live Visitors
+Visitor Tracking
+Blacklisted Visitors
+Emergency Lockdown
+Security Alerts
+Watchlist Verification
+6. Reports Module
+Reports
+Daily Visitors
+Monthly Visitors
+Visitor Trends
+Employee Visit Report
+Department Report
+Room Usage Report
+Peak Hours
+Visitor Duration Report
+7. Notification Module
+Notifications via:
+Email
+SMS
+Push Notification
+Events
+Approval Request
+Approval Status
+Visitor Arrival
+Meeting Reminder
+Check-out Reminder
+Dashboard
+
+--- PAGE 7 ---
+Admin Dashboard
+Cards
+Total Visitors
+Today's Visitors
+Active Visitors
+Checked-Out Visitors
+Pending Approvals
+Available Rooms
+Employees Online
+Security Alerts
+Charts
+Daily Visitors
+Monthly Visitors
+Department-wise Visits
+Peak Visit Hours
+Visitor Purpose Analysis
+Room Utilization
+Employee Dashboard
+Cards
+Pending Requests
+Approved Visitors
+Today's Meetings
+Upcoming Visitors
+Reception Dashboard
+Cards
+Walk-in Visitors
+Expected Visitors
+Active Visitors
+Meeting Rooms
+Security Dashboard
+Cards
+
+--- PAGE 8 ---
+Visitors Inside
+Entry Logs
+Exit Logs
+Suspicious Visitors
+QR Check-in System
+Each approved visitor receives:
+Unique QR Code
+Visitor ID
+Name
+Employee Name
+Visit Date
+Valid Time
+Meeting Room
+Reception scans QR.
+System validates:
+Approval
+Time
+Identity
+Visit Status
+Meeting Room Management
+Features
+Add Rooms
+Edit Rooms
+Delete Rooms
+Capacity
+Projector Availability
+Video Conference
+Whiteboard
+Availability Calendar
+Security Logs
+
+--- PAGE 9 ---
+Every action is stored.
+Examples
+Visitor Registered
+Employee Approved
+QR Generated
+QR Scanned
+Check-in Completed
+Room Assigned
+Meeting Started
+Meeting Ended
+Check-out Completed
+Badge Returned
+Admin Login
+Employee Login
+Failed Login Attempt
+Visitor Rejected
+Emergency Alert
+These logs include:
+Timestamp
+User
+Action
+IP Address
+Device Information
+Status
+Database Collections (Firebase Firestore)
+visitors
+
+--- PAGE 10 ---
+visitorId
+name
+mobile
+email
+company
+purpose
+employeeId
+department
+photoURL
+idProofURL
+qrCode
+status
+checkInTime
+checkOutTime
+employees
+employeeId
+name
+department
+designation
+email
+phone
+approvals
+approvalId
+visitorId
+employeeId
+status
+remarks
+approvalTime
+meetingRooms
+roomId
+roomName
+capacity
+floor
+status
+bookings
+bookingId
+
+--- PAGE 11 ---
+roomId
+visitorId
+employeeId
+startTime
+endTime
+securityLogs
+logId
+userId
+action
+timestamp
+ipAddress
+device
+status
+notifications
+notificationId
+receiverId
+title
+message
+readStatus
+createdAt
+Technology Stack
+Frontend
+HTML5
+CSS3
+JavaScript
+Bootstrap 5
+Chart.js
+QR Code Library
+HTML5 QR Scanner
+Backend
+Firebase Authentication
+Cloud Firestore
+Firebase Storage
+Firebase Cloud Messaging (optional)
+Firebase Hosting
+
+--- PAGE 12 ---
+Advanced Features
+Face photo capture during registration
+Visitor blacklist management
+Emergency evacuation visitor list
+Multi-branch office support
+Digital NDA/Visitor agreement signing
+OTP verification for visitors
+Pre-registration through invitation links
+Host notification on visitor arrival
+Real-time visitor tracking dashboard
+CSV/PDF report export
+Role-based access control (Admin, Receptionist, Security, Employee)
+Expected Outcome
+The Visitor Management System provides a secure, paperless, and efficient way to
+manage office visitors. By integrating employee approvals, QR-based check-in/check-out,
+meeting room scheduling, and detailed security logs, it streamlines the entire visitor
+lifecycle, improves workplace security, reduces manual effort, and delivers real-time
+visibility into visitor activities for organizations of any size.

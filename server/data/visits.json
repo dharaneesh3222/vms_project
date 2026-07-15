@@ -1,0 +1,53 @@
+[
+  {
+    "id": "vis_mrk71x6g-uar8pk0mn",
+    "createdAt": "2026-07-14T05:11:43.672Z",
+    "updatedAt": "2026-07-14T05:15:22.394Z",
+    "visitorId": "vis_mrk71x5u-y2ev7l5th",
+    "hostEmployeeId": "use_mrk6u8wy-ej3cs35tx",
+    "receptionistId": "use_mrk6u8uk-93bcj79h9",
+    "meetingRoomId": "mee_mrk6u9hb-sruzjf5jl",
+    "purpose": "Business Meeting",
+    "scheduledDate": "2026-07-14",
+    "scheduledTime": "10:37",
+    "status": "CheckedOut",
+    "approvalDate": "2026-07-14T05:12:24.561Z",
+    "checkInTime": "2026-07-14T05:14:02.393Z",
+    "checkOutTime": "2026-07-14T05:15:22.378Z",
+    "qrCode": ""
+  },
+  {
+    "id": "vis_mrk89jhb-aahrfj7zh",
+    "createdAt": "2026-07-14T05:45:38.783Z",
+    "updatedAt": "2026-07-14T10:56:32.617Z",
+    "visitorId": "vis_mrk89jgv-tgclq64ej",
+    "hostEmployeeId": "use_mrk6u8x6-8vckcauq6",
+    "receptionistId": "use_mrk6u8uk-93bcj79h9",
+    "meetingRoomId": "mee_mrk6u9h8-4vy5ko4wd",
+    "purpose": "Business Meeting",
+    "scheduledDate": "2026-07-14",
+    "scheduledTime": "11:14",
+    "status": "CheckedOut",
+    "approvalDate": "2026-07-14T06:56:40.918Z",
+    "checkInTime": "2026-07-14T06:57:21.502Z",
+    "checkOutTime": "2026-07-14T10:56:32.616Z",
+    "qrCode": ""
+  },
+  {
+    "id": "vis_mrkhixzx-q70b71hr6",
+    "createdAt": "2026-07-14T10:04:54.045Z",
+    "updatedAt": "2026-07-14T10:12:44.773Z",
+    "visitorId": "vis_mrkhixzp-agyeyy3oc",
+    "hostEmployeeId": "use_mrkhbho6-9g2yh2lqd",
+    "receptionistId": "use_mrk6u8uk-93bcj79h9",
+    "meetingRoomId": "mee_mrkhcuas-pq8kmw11f",
+    "purpose": "Job Interview",
+    "scheduledDate": "2026-07-14",
+    "scheduledTime": "15:33",
+    "status": "CheckedIn",
+    "approvalDate": "2026-07-14T10:11:35.948Z",
+    "checkInTime": "2026-07-14T10:12:44.772Z",
+    "checkOutTime": null,
+    "qrCode": ""
+  }
+]

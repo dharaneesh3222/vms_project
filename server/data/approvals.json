@@ -1,0 +1,38 @@
+[
+  {
+    "id": "app_mrk71x6q-3426n4a4o",
+    "createdAt": "2026-07-14T05:11:43.682Z",
+    "updatedAt": "2026-07-14T05:12:24.575Z",
+    "visitorId": "vis_mrk71x5u-y2ev7l5th",
+    "employeeId": "use_mrk6u8wy-ej3cs35tx",
+    "visitId": "vis_mrk71x6g-uar8pk0mn",
+    "status": "Approved",
+    "requestedAt": "2026-07-14T05:11:43.680Z",
+    "decidedAt": "2026-07-14T05:12:24.571Z",
+    "remarks": "Welcome Elon!"
+  },
+  {
+    "id": "app_mrk89jhl-mm07wefxj",
+    "createdAt": "2026-07-14T05:45:38.793Z",
+    "updatedAt": "2026-07-14T06:56:40.934Z",
+    "visitorId": "vis_mrk89jgv-tgclq64ej",
+    "employeeId": "use_mrk6u8x6-8vckcauq6",
+    "visitId": "vis_mrk89jhb-aahrfj7zh",
+    "status": "Approved",
+    "requestedAt": "2026-07-14T05:45:38.789Z",
+    "decidedAt": "2026-07-14T06:56:40.929Z",
+    "remarks": "Approved by host employee"
+  },
+  {
+    "id": "app_mrkhiy04-7fsel6ubz",
+    "createdAt": "2026-07-14T10:04:54.052Z",
+    "updatedAt": "2026-07-14T10:11:35.953Z",
+    "visitorId": "vis_mrkhixzp-agyeyy3oc",
+    "employeeId": "use_mrkhbho6-9g2yh2lqd",
+    "visitId": "vis_mrkhixzx-q70b71hr6",
+    "status": "Approved",
+    "requestedAt": "2026-07-14T10:04:54.048Z",
+    "decidedAt": "2026-07-14T10:11:35.952Z",
+    "remarks": "Meeting is rescheduled at 5PM"
+  }
+]

@@ -1,0 +1,644 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap');
+
+:root {
+  /* Font Family */
+  --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  --font-heading: 'Outfit', sans-serif;
+
+  /* Premium Dark Theme (Default) */
+  --bg-primary: #0a0b10;
+  --bg-secondary: #121420;
+  --bg-tertiary: #1a1d30;
+  --border-color: rgba(255, 255, 255, 0.08);
+  --border-color-hover: rgba(255, 255, 255, 0.16);
+  --text-primary: #f3f4f6;
+  --text-secondary: #9ca3af;
+  --text-muted: #6b7280;
+
+  /* Glassmorphism */
+  --glass-bg: rgba(18, 20, 32, 0.7);
+  --glass-border: rgba(255, 255, 255, 0.06);
+  --glass-blur: blur(16px);
+  --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.4);
+
+  /* Role Accent Colors */
+  --visitor-color: #3b82f6;      /* Blue */
+  --visitor-bg: rgba(59, 130, 246, 0.15);
+  --employee-color: #10b981;     /* Green */
+  --employee-bg: rgba(16, 185, 129, 0.15);
+  --receptionist-color: #f97316; /* Orange */
+  --receptionist-bg: rgba(249, 115, 22, 0.15);
+  --security-color: #ef4444;     /* Red */
+  --security-bg: rgba(239, 68, 68, 0.15);
+  --admin-color: #8b5cf6;        /* Purple */
+  --admin-bg: rgba(139, 92, 246, 0.15);
+
+  /* Dashboard Shadows */
+  --card-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.25);
+  --glow-shadow: 0 0 15px rgba(59, 130, 246, 0.2);
+}
+
+/* Light Theme overrides */
+[data-theme="light"] {
+  --bg-primary: #f8fafc;
+  --bg-secondary: #ffffff;
+  --bg-tertiary: #f1f5f9;
+  --border-color: rgba(0, 0, 0, 0.08);
+  --border-color-hover: rgba(0, 0, 0, 0.15);
+  --text-primary: #0f172a;
+  --text-secondary: #475569;
+  --text-muted: #94a3b8;
+
+  --glass-bg: rgba(255, 255, 255, 0.8);
+  --glass-border: rgba(0, 0, 0, 0.06);
+  --glass-shadow: 0 8px 32px 0 rgba(15, 23, 42, 0.08);
+
+  --visitor-bg: rgba(59, 130, 246, 0.1);
+  --employee-bg: rgba(16, 185, 129, 0.1);
+  --receptionist-bg: rgba(249, 115, 22, 0.1);
+  --security-bg: rgba(239, 68, 68, 0.1);
+  --admin-bg: rgba(139, 92, 246, 0.1);
+
+  --card-shadow: 0 4px 20px 0 rgba(15, 23, 42, 0.05);
+}
+
+/* Global Reset overrides */
+body {
+  font-family: var(--font-sans);
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  min-height: 100vh;
+  margin: 0;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  overflow-x: hidden;
+}
+
+#root {
+  /* Override default generated container styles */
+  width: 100% !important;
+  max-width: 100% !important;
+  margin: 0 !important;
+  border-inline: none !important;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  text-align: left !important;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-primary);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border-color);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-muted);
+}
+
+/* Glassmorphism Classes */
+.glass-card {
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--glass-shadow);
+  border-radius: 16px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.glass-card:hover {
+  border-color: var(--border-color-hover);
+}
+
+/* Custom Portal Gradients */
+.visitor-gradient {
+  background: linear-gradient(135deg, var(--visitor-color), #1d4ed8);
+}
+.employee-gradient {
+  background: linear-gradient(135deg, var(--employee-color), #047857);
+}
+.receptionist-gradient {
+  background: linear-gradient(135deg, var(--receptionist-color), #c2410c);
+}
+.security-gradient {
+  background: linear-gradient(135deg, var(--security-color), #b91c1c);
+}
+.admin-gradient {
+  background: linear-gradient(135deg, var(--admin-color), #6d28d9);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scanner {
+  0% { top: 0%; }
+  50% { top: 100%; }
+  100% { top: 0%; }
+}
+
+@keyframes pulseGlow {
+  0% { box-shadow: 0 0 5px rgba(59, 130, 246, 0.2); }
+  50% { box-shadow: 0 0 20px rgba(59, 130, 246, 0.4); }
+  100% { box-shadow: 0 0 5px rgba(59, 130, 246, 0.2); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.4s ease-out forwards;
+}
+
+.animate-slide-up {
+  animation: slideUp 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Scanning Indicator */
+.scanner-line {
+  position: absolute;
+  width: 100%;
+  height: 4px;
+  background: var(--security-color);
+  box-shadow: 0 0 8px var(--security-color);
+  animation: scanner 3s ease-in-out infinite;
+  z-index: 5;
+}
+
+/* Custom premium input fields */
+.form-control-custom {
+  background-color: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--border-color);
+  color: var(--text-primary) !important;
+  border-radius: 10px;
+  padding: 12px 16px;
+  transition: all 0.2s ease;
+}
+
+[data-theme="light"] .form-control-custom {
+  background-color: rgba(0, 0, 0, 0.02);
+}
+
+.form-control-custom:focus {
+  background-color: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.25);
+  box-shadow: var(--glow-shadow);
+  outline: none;
+}
+
+[data-theme="light"] .form-control-custom:focus {
+  background-color: #ffffff;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
+}
+
+.form-control-custom:disabled,
+select.form-control-custom:disabled {
+  background-color: rgba(255, 255, 255, 0.02) !important;
+  color: var(--text-muted) !important;
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+[data-theme="light"] .form-control-custom:disabled,
+[data-theme="light"] select.form-control-custom:disabled {
+  background-color: rgba(0, 0, 0, 0.05) !important;
+}
+
+/* Select element fix */
+select.form-control-custom {
+  color: var(--text-secondary);
+}
+
+select.form-control-custom option {
+  background-color: var(--bg-secondary);
+  color: var(--text-primary);
+}
+
+/* Stats Cards styling */
+.stat-card {
+  padding: 24px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.stat-icon {
+  width: 52px;
+  height: 52px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+}
+
+/* Badges styling */
+.badge-custom {
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-weight: 500;
+  font-size: 13px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* Floating label effect compatibility */
+.floating-group {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+/* Buttons style */
+.btn-primary-custom {
+  background: var(--visitor-gradient);
+  border: none;
+  color: #fff;
+  font-weight: 600;
+  padding: 12px 24px;
+  border-radius: 10px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn-primary-custom:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 15px rgba(59, 130, 246, 0.4);
+}
+
+.btn-primary-custom:active {
+  transform: translateY(1px);
+}
+
+/* Sidebar styling */
+.sidebar-layout {
+  height: calc(100vh - 73px);
+  display: flex;
+  overflow: hidden;
+}
+
+.sidebar-nav {
+  width: 260px;
+  background-color: var(--bg-secondary);
+  border-right: 1px solid var(--border-color);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow-y: auto;
+}
+
+.sidebar-content {
+  flex: 1;
+  padding: 30px;
+  background-color: var(--bg-primary);
+  height: 100%;
+  overflow-y: auto;
+}
+
+@media (max-width: 768px) {
+  .sidebar-layout {
+    flex-direction: column;
+    height: auto;
+    overflow: visible;
+  }
+  
+  .sidebar-nav {
+    width: 100%;
+    height: auto;
+    border-right: none;
+    border-bottom: 1px solid var(--border-color);
+    flex-direction: row;
+    overflow-x: auto;
+    white-space: nowrap;
+    padding: 10px !important;
+  }
+
+  .sidebar-item {
+    margin-bottom: 0 !important;
+    margin-right: 6px;
+    padding: 8px 16px !important;
+  }
+  
+  .sidebar-content {
+    padding: 15px;
+    height: auto;
+    overflow: visible;
+  }
+}
+
+.sidebar-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 20px;
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-weight: 500;
+  border-radius: 10px;
+  margin-bottom: 6px;
+  transition: all 0.2s ease;
+}
+
+.sidebar-item:hover {
+  color: var(--text-primary);
+  background-color: var(--border-color);
+}
+
+.sidebar-item.active {
+  color: #fff;
+}
+
+.sidebar-item.active.visitor-active {
+  background: var(--visitor-gradient);
+}
+.sidebar-item.active.employee-active {
+  background: var(--employee-gradient);
+}
+.sidebar-item.active.receptionist-active {
+  background: var(--receptionist-gradient);
+}
+.sidebar-item.active.security-active {
+  background: var(--security-gradient);
+}
+.sidebar-item.active.admin-active {
+  background: var(--admin-gradient);
+}
+
+/* Webcam container */
+.webcam-container {
+  position: relative;
+  width: 100%;
+  max-width: 400px;
+  aspect-ratio: 4/3;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 2px dashed var(--border-color);
+  background-color: #000;
+}
+
+.webcam-preview {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Pass card formatting for print */
+@media print {
+  body * {
+    visibility: hidden;
+  }
+  .print-area, .print-area * {
+    visibility: visible;
+  }
+  .print-area {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+  }
+  .no-print {
+    display: none !important;
+  }
+}
+
+/* Table Text Visibility & Contrast Fixes */
+.table.table-dark {
+  --bs-table-bg: transparent !important;
+  --bs-table-color: var(--text-primary) !important;
+  color: var(--text-primary) !important;
+  border-color: var(--border-color) !important;
+}
+
+.table.table-dark th {
+  color: var(--text-primary) !important;
+  font-weight: 600 !important;
+}
+
+.table.table-dark td {
+  color: var(--text-secondary) !important;
+}
+
+/* Global Typography & Label Visibility Overrides */
+.text-secondary {
+  color: var(--text-secondary) !important;
+}
+
+.text-muted {
+  color: var(--text-secondary) !important;
+}
+
+label, 
+.form-label, 
+.form-text, 
+.card-subtitle {
+  color: var(--text-secondary) !important;
+}
+
+/* Input Placeholders legible contrast */
+::-webkit-input-placeholder,
+::-moz-placeholder,
+:-ms-input-placeholder,
+:-moz-placeholder,
+::placeholder {
+  color: var(--text-muted) !important;
+  opacity: 0.85 !important;
+}
+
+/* Badge Reset for Custom Styled Badges */
+.badge {
+  background-color: unset !important;
+  color: unset !important;
+}
+
+/* Modal/Popup Page Styling Overrides */
+.modal-content.glass-card {
+  background-color: var(--bg-secondary) !important;
+  border: 1px solid var(--border-color) !important;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6) !important;
+  color: var(--text-primary) !important;
+}
+
+.modal-content.glass-card .modal-header,
+.modal-content.glass-card .modal-footer {
+  border-color: var(--border-color) !important;
+  background-color: rgba(0, 0, 0, 0.1) !important;
+}
+
+.modal-content.glass-card .form-control-custom,
+.modal-content.glass-card .form-select.form-control-custom {
+  background-color: rgba(255, 255, 255, 0.04) !important;
+  color: var(--text-primary) !important;
+  border-color: var(--border-color) !important;
+}
+
+[data-theme="light"] .modal-content.glass-card .form-control-custom,
+[data-theme="light"] .modal-content.glass-card .form-select.form-control-custom {
+  background-color: rgba(0, 0, 0, 0.02) !important;
+  color: var(--text-primary) !important;
+}
+
+/* Ensure modal header close button is visible in dark theme */
+.modal-content.glass-card .btn-close {
+  filter: invert(1) grayscale(1) brightness(2) !important;
+}
+
+[data-theme="light"] .modal-content.glass-card .btn-close {
+  filter: none !important;
+}
+
+/* Background Secondary & Opacity Utilities Override */
+.bg-secondary {
+  background-color: var(--bg-secondary) !important;
+}
+
+.bg-secondary.bg-opacity-5 {
+  background-color: rgba(255, 255, 255, 0.03) !important;
+}
+
+.bg-secondary.bg-opacity-10 {
+  background-color: rgba(255, 255, 255, 0.06) !important;
+}
+
+.bg-secondary.bg-opacity-15 {
+  background-color: rgba(255, 255, 255, 0.09) !important;
+}
+
+.bg-secondary.bg-opacity-20 {
+  background-color: rgba(255, 255, 255, 0.12) !important;
+}
+
+/* Premium styling for secondary badge */
+.badge.bg-secondary {
+  background-color: rgba(255, 255, 255, 0.08) !important;
+  color: var(--text-secondary) !important;
+  border: 1px solid var(--border-color) !important;
+}
+
+/* Stat Icon Flex Alignment */
+.stat-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  flex-shrink: 0;
+}
+
+/* Professional Print Styles for Digital Pass */
+@media print {
+  body, html {
+    background: #ffffff !important;
+    color: #000000 !important;
+  }
+  
+  .no-print {
+    display: none !important;
+  }
+  
+  .print-area {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    box-shadow: none !important;
+    background: #ffffff !important;
+  }
+  
+  .glass-card {
+    background: #ffffff !important;
+    color: #000000 !important;
+    border: 2px dashed #000000 !important;
+    border-radius: 12px !important;
+    box-shadow: none !important;
+  }
+  
+  .visitor-gradient {
+    background: #000000 !important;
+    color: #ffffff !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  
+  /* Force dark text for printed sections */
+  .print-area text,
+  .print-area h2,
+  .print-area h3,
+  .print-area div,
+  .print-area span,
+  .print-area p {
+    color: #000000 !important;
+  }
+  
+  .print-area .visitor-gradient h2,
+  .print-area .visitor-gradient span {
+    color: #ffffff !important;
+  }
+  
+  /* Format detail tables for print */
+  .print-area .bg-dark {
+    background-color: #f3f4f6 !important;
+    border: 1px solid #e5e7eb !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+}
+
+/* Badge Color & Opacity Overrides (Fix for solid color bug) */
+.bg-success.bg-opacity-20, .bg-success.bg-opacity-15, .bg-success.bg-opacity-10 {
+  background-color: rgba(16, 185, 129, 0.15) !important;
+}
+.text-success {
+  color: #10b981 !important;
+}
+
+.bg-danger.bg-opacity-20, .bg-danger.bg-opacity-15, .bg-danger.bg-opacity-10 {
+  background-color: rgba(239, 68, 68, 0.15) !important;
+}
+.text-danger {
+  color: #ef4444 !important;
+}
+
+.bg-warning.bg-opacity-20, .bg-warning.bg-opacity-15, .bg-warning.bg-opacity-10 {
+  background-color: rgba(245, 158, 11, 0.15) !important;
+}
+.text-warning {
+  color: #f59e0b !important;
+}
+
+.bg-primary.bg-opacity-20, .bg-primary.bg-opacity-15, .bg-primary.bg-opacity-10 {
+  background-color: rgba(59, 130, 246, 0.15) !important;
+}
+.text-primary {
+  color: #3b82f6 !important;
+}
+
+.bg-info.bg-opacity-20, .bg-info.bg-opacity-15, .bg-info.bg-opacity-10 {
+  background-color: rgba(6, 182, 212, 0.15) !important;
+}
+.text-info {
+  color: #06b6d4 !important;
+}

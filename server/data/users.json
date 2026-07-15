@@ -1,0 +1,86 @@
+[
+  {
+    "id": "use_mrk6u8se-lnrulganh",
+    "createdAt": "2026-07-14T05:05:45.470Z",
+    "updatedAt": "2026-07-14T05:05:45.470Z",
+    "email": "admin@vms.com",
+    "displayName": "System Admin",
+    "passwordHash": "$2a$10$EjYLHxgOBldUNrkPHoPzCOyPjtMmpLMw3UUsStkGbBac4g/MPBl5e",
+    "role": "admin",
+    "department": "IT",
+    "phoneNumber": "+1234567890",
+    "isActive": true
+  },
+  {
+    "id": "use_mrk6u8uk-93bcj79h9",
+    "createdAt": "2026-07-14T05:05:45.548Z",
+    "updatedAt": "2026-07-14T05:05:45.548Z",
+    "email": "receptionist@vms.com",
+    "displayName": "Alice Frontdesk",
+    "passwordHash": "$2a$10$EjYLHxgOBldUNrkPHoPzCOMUS0bLGlG92CUjfkSHdCLpx6EvobgSa",
+    "role": "receptionist",
+    "department": "Operations",
+    "phoneNumber": "+1234567891",
+    "isActive": true
+  },
+  {
+    "id": "use_mrk6u8wt-x2lmz2fa6",
+    "createdAt": "2026-07-14T05:05:45.629Z",
+    "updatedAt": "2026-07-14T05:05:45.629Z",
+    "email": "security@vms.com",
+    "displayName": "Guard Bob",
+    "passwordHash": "$2a$10$EjYLHxgOBldUNrkPHoPzCOornQ9YQ.7DUzN3xKqPILXJxWijgZ28O",
+    "role": "security",
+    "department": "Security",
+    "phoneNumber": "+1234567892",
+    "isActive": true
+  },
+  {
+    "id": "use_mrk6u8wy-ej3cs35tx",
+    "createdAt": "2026-07-14T05:05:45.634Z",
+    "updatedAt": "2026-07-14T11:04:18.416Z",
+    "email": "john.doe@vms.com",
+    "displayName": "John Doe",
+    "passwordHash": "$2a$10$EjYLHxgOBldUNrkPHoPzCOigneXZkoBzEwcwoqPu1paqW9jSZmPOq",
+    "role": "employee",
+    "department": "Engineering",
+    "phoneNumber": "+1999888777",
+    "isActive": false
+  },
+  {
+    "id": "use_mrk6u8x6-8vckcauq6",
+    "createdAt": "2026-07-14T05:05:45.642Z",
+    "updatedAt": "2026-07-14T11:03:22.959Z",
+    "email": "jane.smith@vms.com",
+    "displayName": "Jane Smith",
+    "passwordHash": "$2a$10$EjYLHxgOBldUNrkPHoPzCOigneXZkoBzEwcwoqPu1paqW9jSZmPOq",
+    "role": "employee",
+    "department": "HR",
+    "phoneNumber": "+1999888777",
+    "isActive": false
+  },
+  {
+    "id": "use_mrk6u8xh-l5t3x26ok",
+    "createdAt": "2026-07-14T05:05:45.653Z",
+    "updatedAt": "2026-07-14T05:05:45.653Z",
+    "email": "bob.johnson@vms.com",
+    "displayName": "Bob Johnson",
+    "passwordHash": "$2a$10$EjYLHxgOBldUNrkPHoPzCOigneXZkoBzEwcwoqPu1paqW9jSZmPOq",
+    "role": "employee",
+    "department": "Finance",
+    "phoneNumber": "+1999888777",
+    "isActive": true
+  },
+  {
+    "id": "use_mrkhbho6-9g2yh2lqd",
+    "createdAt": "2026-07-14T09:59:06.294Z",
+    "updatedAt": "2026-07-14T09:59:06.294Z",
+    "email": "karupannan@gmail.com",
+    "displayName": "Karupannan",
+    "passwordHash": "$2a$10$11Vb3JgwvKi3S7/kYtLqwefbbJnCJMBVUwinfpzZ5Q460eN5xd/46",
+    "role": "employee",
+    "department": "Sales / Marketing",
+    "phoneNumber": "9876543210",
+    "isActive": true
+  }
+]

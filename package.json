@@ -1,0 +1,16 @@
+{
+  "name": "vms-root",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "install:client": "npm install --prefix client",
+    "install:server": "npm install --prefix server",
+    "install-all": "npm install && npm run install:server && npm run install:client",
+    "start:client": "npm run dev --prefix client",
+    "start:server": "npm run dev --prefix server",
+    "start": "concurrently \"npm run start:server\" \"npm run start:client\""
+  },
+  "dependencies": {
+    "concurrently": "^8.2.2"
+  }
+}

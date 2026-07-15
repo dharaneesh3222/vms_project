@@ -1,0 +1,38 @@
+[
+  {
+    "id": "use_mrk6u8wy-ej3cs35tx",
+    "createdAt": "2026-07-14T05:05:45.637Z",
+    "updatedAt": "2026-07-14T05:05:45.637Z",
+    "name": "John Doe",
+    "department": "Engineering",
+    "designation": "Software Engineering Manager",
+    "officeLocation": "Floor 3, Block A"
+  },
+  {
+    "id": "use_mrk6u8x6-8vckcauq6",
+    "createdAt": "2026-07-14T05:05:45.649Z",
+    "updatedAt": "2026-07-14T06:55:43.201Z",
+    "name": "Jane Smith",
+    "department": "HR",
+    "designation": "HR Director",
+    "officeLocation": "Floor 1, Block B"
+  },
+  {
+    "id": "use_mrk6u8xh-l5t3x26ok",
+    "createdAt": "2026-07-14T05:05:45.672Z",
+    "updatedAt": "2026-07-14T05:05:45.672Z",
+    "name": "Bob Johnson",
+    "department": "Finance",
+    "designation": "Finance Manager",
+    "officeLocation": "Floor 2, Block A"
+  },
+  {
+    "id": "use_mrkhbho6-9g2yh2lqd",
+    "createdAt": "2026-07-14T09:59:06.298Z",
+    "updatedAt": "2026-07-14T09:59:06.298Z",
+    "name": "Karupannan",
+    "department": "Sales / Marketing",
+    "designation": "Manager",
+    "officeLocation": "1st floor"
+  }
+]

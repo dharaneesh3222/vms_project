@@ -1,0 +1,832 @@
+[
+  {
+    "id": "aud_mrk6vdgn-rk2fz9mww",
+    "createdAt": "2026-07-14T05:06:38.183Z",
+    "updatedAt": "2026-07-14T05:06:38.183Z",
+    "userId": "use_mrk6u8se-lnrulganh",
+    "visitId": null,
+    "action": "LOGIN_SUCCESS",
+    "details": "User logged in successfully",
+    "timestamp": "2026-07-14T05:06:38.181Z"
+  },
+  {
+    "id": "aud_mrk6w39y-7wexv9kzd",
+    "createdAt": "2026-07-14T05:07:11.638Z",
+    "updatedAt": "2026-07-14T05:07:11.638Z",
+    "userId": "use_mrk6u8se-lnrulganh",
+    "visitId": null,
+    "action": "LOGIN_SUCCESS",
+    "details": "User logged in successfully",
+    "timestamp": "2026-07-14T05:07:11.637Z"
+  },
+  {
+    "id": "aud_mrk71x7d-4t18vmnn5",
+    "createdAt": "2026-07-14T05:11:43.705Z",
+    "updatedAt": "2026-07-14T05:11:43.705Z",
+    "userId": "SYSTEM",
+    "visitId": "vis_mrk71x6g-uar8pk0mn",
+    "action": "VISIT_REGISTERED",
+    "details": "Visitor Elon Musk registered for host John Doe",
+    "timestamp": "2026-07-14T05:11:43.700Z"
+  },
+  {
+    "id": "aud_mrk72afq-bivvybul3",
+    "createdAt": "2026-07-14T05:12:00.854Z",
+    "updatedAt": "2026-07-14T05:12:00.854Z",
+    "userId": "use_mrk6u8wy-ej3cs35tx",
+    "visitId": null,
+    "action": "LOGIN_SUCCESS",
+    "details": "User logged in successfully",
+    "timestamp": "2026-07-14T05:12:00.851Z"
+  },
+  {
+    "id": "aud_mrk72srj-6ln2zs3ch",
+    "createdAt": "2026-07-14T05:12:24.607Z",
+    "updatedAt": "2026-07-14T05:12:24.607Z",
+    "userId": "use_mrk6u8wy-ej3cs35tx",
+    "visitId": "vis_mrk71x6g-uar8pk0mn",
+    "action": "VISIT_APPROVED",
+    "details": "Host approved visit for visitor ID: vis_mrk71x5u-y2ev7l5th. Remarks: Welcome Elon!",
+    "timestamp": "2026-07-14T05:12:24.604Z"
+  },
+  {
+    "id": "aud_mrk73onk-pfox4oot0",
+    "createdAt": "2026-07-14T05:13:05.936Z",
+    "updatedAt": "2026-07-14T05:13:05.936Z",
+    "userId": "use_mrk6u8uk-93bcj79h9",
+    "visitId": null,
+    "action": "LOGIN_SUCCESS",
+    "details": "User logged in successfully",
+    "timestamp": "2026-07-14T05:13:05.932Z"
+  },
+  {
+    "id": "aud_mrk74w9b-zusle45u5",
+    "createdAt": "2026-07-14T05:14:02.447Z",
+    "updatedAt": "2026-07-14T05:14:02.447Z",
+    "userId": "use_mrk6u8uk-93bcj79h9",
+    "visitId": "vis_mrk71x6g-uar8pk0mn",
+    "action": "CHECK_IN",
+    "details": "Checked in visitor. Room: mee_mrk6u9hb-sruzjf5jl, Badge: B-99",
+    "timestamp": "2026-07-14T05:14:02.439Z"
+  },
+  {
+    "id": "aud_mrk75yyu-mzrdhw3ue",
+    "createdAt": "2026-07-14T05:14:52.614Z",
+    "updatedAt": "2026-07-14T05:14:52.614Z",
+    "userId": "use_mrk6u8wt-x2lmz2fa6",
+    "visitId": null,
+    "action": "LOGIN_SUCCESS",
+    "details": "User logged in successfully",
+    "timestamp": "2026-07-14T05:14:52.566Z"
+  },
+  {
+    "id": "aud_mrk76lzp-kmkvrl8dz",
+    "createdAt": "2026-07-14T05:15:22.453Z",
+    "updatedAt": "2026-07-14T05:15:22.453Z",
+    "userId": "use_mrk6u8wt-x2lmz2fa6",
+    "visitId": "vis_mrk71x6g-uar8pk0mn",
+    "action": "GATE_CHECK_OUT",
+    "details": "Security guard confirmed exit. Checked out visitor.",
+    "timestamp": "2026-07-14T05:15:22.450Z"
+  },
+  {
+    "id": "aud_mrk797ez-kxaioy65g",
+    "createdAt": "2026-07-14T05:17:23.531Z",
+    "updatedAt": "2026-07-14T05:17:23.531Z",
+    "userId": "use_mrk6u8se-lnrulganh",
+    "visitId": null,
+    "action": "LOGIN_SUCCESS",
+    "details": "User logged in successfully",
+    "timestamp": "2026-07-14T05:17:23.528Z"
+  },
+  {
+    "id": "aud_mrk89ji6-u8gb10pvm",
+    "createdAt": "2026-07-14T05:45:38.814Z",
+    "updatedAt": "2026-07-14T05:45:38.814Z",
+    "userId": "SYSTEM",
+    "visitId": "vis_mrk89jhb-aahrfj7zh",
+    "action": "VISIT_REGISTERED",
+    "details": "Visitor Dharaneeshwar registered for host Jane Smith",
+    "timestamp": "2026-07-14T05:45:38.810Z"
+  },
+  {
+    "id": "aud_mrk8b2lx-uvly6rv3v",
+    "createdAt": "2026-07-14T05:46:50.229Z",
+    "updatedAt": "2026-07-14T05:46:50.229Z",
+    "userId": "use_mrk6u8se-lnrulganh",
+    "visitId": null,
+    "action": "LOGIN_SUCCESS",
+    "details": "User logged in successfully",
+    "timestamp": "2026-07-14T05:46:50.226Z"
+  },
+  {
+    "id": "aud_mrk8d473-43pbl9i13",
+    "createdAt": "2026-07-14T05:48:25.599Z",
+    "updatedAt": "2026-07-14T05:48:25.599Z",
+    "userId": "use_mrk6u8uk-93bcj79h9",
+    "visitId": null,
+    "action": "LOGIN_SUCCESS",
+    "details": "User logged in successfully",
+    "timestamp": "2026-07-14T05:48:25.596Z"
+  },
+  {
+    "id": "aud_mrk8digk-chy02g2ya",
+    "createdAt": "2026-07-14T05:48:44.084Z",
+    "updatedAt": "2026-07-14T05:48:44.084Z",
+    "userId": "use_mrk6u8wy-ej3cs35tx",
+    "visitId": null,
+    "action": "LOGIN_SUCCESS",
+    "details": "User logged in successfully",
+    "timestamp": "2026-07-14T05:48:44.081Z"
+  },
+  {
+    "id": "aud_mrk8dnsz-u1p36sy1b",
+    "createdAt": "2026-07-14T05:48:51.011Z",
+    "updatedAt": "2026-07-14T05:48:51.011Z",
+    "userId": "use_mrk6u8wt-x2lmz2fa6",
+    "visitId": null,
+    "action": "LOGIN_SUCCESS",
+    "details": "User logged in successfully",
+    "timestamp": "2026-07-14T05:48:51.008Z"
+  },
+  {
+    "id": "aud_mrk8eb7k-3vgus1r71",
+    "createdAt": "2026-07-14T05:49:21.344Z",
+    "updatedAt": "2026-07-14T05:49:21.344Z",
+    "userId": "use_mrk6u8uk-93bcj79h9",
+    "visitId": null,
+    "action": "LOGIN_SUCCESS",
+    "details": "User logged in successfully",
+    "timestamp": "2026-07-14T05:49:21.342Z"
+  },
+  {
+    "id": "aud_mrk8ns7y-4ck3godho",
+    "createdAt": "2026-07-14T05:56:43.294Z",
+    "updatedAt": "2026-07-14T05:56:43.295Z",
+    "userId": "use_mrk6u8se-lnrulganh",
+    "visitId": null,
+    "action": "LOGIN_SUCCESS",
+    "details": "User logged in successfully",
+    "timestamp": "2026-07-14T05:56:43.288Z"
+  },
+  {
+    "id": "aud_mrk8ozai-7zmr618b8",
+    "createdAt": "2026-07-14T05:57:39.114Z",
+    "updatedAt": "2026-07-14T05:57:39.114Z",
+    "userId": "use_mrk6u8se-lnrulganh",
+    "visitId": null,
+    "action": "LOGIN_SUCCESS",
+    "details": "User logged in successfully",
+    "timestamp": "2026-07-14T05:57:39.111Z"
+  },
+  {
+    "id": "aud_mrk8qiaz-pl169q852",
+    "createdAt": "2026-07-14T05:58:50.411Z",
+    "updatedAt": "2026-07-14T05:58:50.411Z",
+    "userId": "use_mrk6u8se-lnrulganh",
+    "visitId": null,
+    "action": "LOGIN_SUCCESS",
+    "details": "User logged in successfully",
+    "timestamp": "2026-07-14T05:58:50.408Z"
+  },
+  {
+    "id": "aud_mrk8vyf8-g1b0gf3i4",
+    "createdAt": "2026-07-14T06:03:04.580Z",
+    "updatedAt": "2026-07-14T06:03:04.580Z",
+    "userId": "use_mrk6u8uk-93bcj79h9",
+    "visitId": null,
+    "action": "LOGIN_SUCCESS",
+    "details": "User logged in successfully",
+    "timestamp": "2026-07-14T06:03:04.577Z"
+  },
+  {
+    "id": "aud_mrk8w6gc-euysfxjik",
+    "createdAt": "2026-07-14T06:03:14.988Z",
+    "updatedAt": "2026-07-14T06:03:14.988Z",
+    "userId": "use_mrk6u8wy-ej3cs35tx",
+    "visitId": null,
+    "action": "LOGIN_SUCCESS",
+    "details": "User logged in successfully",
+    "timestamp": "2026-07-14T06:03:14.985Z"
+  },
+  {
+    "id": "aud_mrk8wneu-90oekcfi7",
+    "createdAt": "2026-07-14T06:03:36.966Z",
+    "updatedAt": "2026-07-14T06:03:36.966Z",
+    "userId": "use_mrk6u8wt-x2lmz2fa6",
+    "visitId": null,
+    "action": "LOGIN_SUCCESS",
+    "details": "User logged in successfully",
+    "timestamp": "2026-07-14T06:03:36.963Z"
+  },
+  {
+    "id": "aud_mrk8wq4q-tyn33jfhc",
+    "createdAt": "2026-07-14T06:03:40.490Z",
+    "updatedAt": "2026-07-14T06:03:40.490Z",
+    "userId": "use_mrk6u8se-lnrulganh",
+    "visitId": null,
+    "action": "LOGIN_SUCCESS",
+    "details": "User logged in successfully",
+    "timestamp": "2026-07-14T06:03:40.487Z"
+  },
+  {
+    "id": "aud_mrk96khe-v9e680qrh",
+    "createdAt": "2026-07-14T06:11:19.730Z",
+    "updatedAt": "2026-07-14T06:11:19.730Z",
+    "userId": "use_mrk6u8uk-93bcj79h9",
+    "visitId": null,
+    "action": "LOGIN_SUCCESS",
+    "details": "User logged in successfully",
+    "timestamp": "2026-07-14T06:11:19.727Z"
+  },
+  {
+    "id": "aud_mrk9o24n-hq6sc6zxq",
+    "createdAt": "2026-07-14T06:24:55.751Z",
+    "updatedAt": "2026-07-14T06:24:55.751Z",
+    "userId": "use_mrk6u8se-lnrulganh",
+    "visitId": null,
+    "action": "LOGIN_SUCCESS",
+    "details": "User logged in successfully",
+    "timestamp": "2026-07-14T06:24:55.749Z"
+  },
+  {
+    "id": "aud_mrk9st99-5e2t1r0xn",
+    "createdAt": "2026-07-14T06:28:37.533Z",
+    "updatedAt": "2026-07-14T06:28:37.533Z",
+    "userId": "use_mrk6u8wy-ej3cs35tx",
+    "visitId": null,
+    "action": "LOGIN_SUCCESS",
+    "details": "User logged in successfully",
+    "timestamp": "2026-07-14T06:28:37.531Z"
+  },
+  {
+    "id": "aud_mrka8fcy-jx5iegfag",
+    "createdAt": "2026-07-14T06:40:46.018Z",
+    "updatedAt": "2026-07-14T06:40:46.018Z",
+    "userId": "use_mrk6u8wy-ej3cs35tx",
+    "visitId": null,
+    "action": "LOGIN_SUCCESS",
+    "details": "User logged in successfully",
+    "timestamp": "2026-07-14T06:40:46.014Z"
+  },
+  {
+    "id": "aud_mrka9d84-l4ljny3qs",
+    "createdAt": "2026-07-14T06:41:29.908Z",
+    "updatedAt": "2026-07-14T06:41:29.908Z",
+    "userId": "use_mrk6u8wt-x2lmz2fa6",
+    "visitId": null,
+    "action": "LOGIN_SUCCESS",
+    "details": "User logged in successfully",
+    "timestamp": "2026-07-14T06:41:29.905Z"
+  },
+  {
+    "id": "aud_mrkaqr7h-h48owv1c3",
+    "createdAt": "2026-07-14T06:55:01.181Z",
+    "updatedAt": "2026-07-14T06:55:01.181Z",
+    "userId": "SYSTEM",
+    "visitId": null,
+    "action": "LOGIN_FAILED",
+    "details": "Attempted login for non-existent email: Jane_Smith@vms.com",
+    "timestamp": "2026-07-14T06:55:01.178Z"
+  },
+  {
+    "id": "aud_mrkaqyqa-bh6q0gfq1",
+    "createdAt": "2026-07-14T06:55:10.930Z",
+    "updatedAt": "2026-07-14T06:55:10.930Z",
+    "userId": "use_mrk6u8wt-x2lmz2fa6",
+    "visitId": null,
+    "action": "LOGIN_SUCCESS",
+    "details": "User logged in successfully",
+    "timestamp": "2026-07-14T06:55:10.918Z"
+  },
+  {
+    "id": "aud_mrkar673-i9ldq1azl",
+    "createdAt": "2026-07-14T06:55:20.607Z",
+    "updatedAt": "2026-07-14T06:55:20.607Z",
+    "userId": "use_mrk6u8se-lnrulganh",
+    "visitId": null,
+    "action": "LOGIN_SUCCESS",
+    "details": "User logged in successfully",
+    "timestamp": "2026-07-14T06:55:20.604Z"
+  },
+  {
+    "id": "aud_mrkarnn4-wabx5irrw",
+    "createdAt": "2026-07-14T06:55:43.217Z",
+    "updatedAt": "2026-07-14T06:55:43.217Z",
+    "userId": "use_mrk6u8se-lnrulganh",
+    "visitId": null,
+    "action": "EMPLOYEE_UPDATED",
+    "details": "Admin updated employee details for: Jane Smith",
+    "timestamp": "2026-07-14T06:55:43.213Z"
+  },
+  {
+    "id": "aud_mrkaryfp-phnjq1dzk",
+    "createdAt": "2026-07-14T06:55:57.205Z",
+    "updatedAt": "2026-07-14T06:55:57.205Z",
+    "userId": "use_mrk6u8x6-8vckcauq6",
+    "visitId": null,
+    "action": "LOGIN_SUCCESS",
+    "details": "User logged in successfully",
+    "timestamp": "2026-07-14T06:55:57.201Z"
+  },
+  {
+    "id": "aud_mrkasw7b-gbaj0m22f",
+    "createdAt": "2026-07-14T06:56:40.967Z",
+    "updatedAt": "2026-07-14T06:56:40.968Z",
+    "userId": "use_mrk6u8x6-8vckcauq6",
+    "visitId": "vis_mrk89jhb-aahrfj7zh",
+    "action": "VISIT_APPROVED",
+    "details": "Host approved visit for visitor ID: vis_mrk89jgv-tgclq64ej. Remarks: None",
+    "timestamp": "2026-07-14T06:56:40.961Z"
+  },
+  {
+    "id": "aud_mrkatbms-ddqdcyj63",
+    "createdAt": "2026-07-14T06:57:00.964Z",
+    "updatedAt": "2026-07-14T06:57:00.964Z",
+    "userId": "use_mrk6u8uk-93bcj79h9",
+    "visitId": null,
+    "action": "LOGIN_SUCCESS",
+    "details": "User logged in successfully",
+    "timestamp": "2026-07-14T06:57:00.960Z"
+  },
+  {
+    "id": "aud_mrkatrid-v8agoi5yj",
+    "createdAt": "2026-07-14T06:57:21.541Z",
+    "updatedAt": "2026-07-14T06:57:21.541Z",
+    "userId": "use_mrk6u8uk-93bcj79h9",
+    "visitId": "vis_mrk89jhb-aahrfj7zh",
+    "action": "CHECK_IN",
+    "details": "Checked in visitor. Room: mee_mrk6u9h8-4vy5ko4wd, Badge: B-102",
+    "timestamp": "2026-07-14T06:57:21.537Z"
+  },
+  {
+    "id": "aud_mrkau9lp-o7hg3ghb8",
+    "createdAt": "2026-07-14T06:57:44.990Z",
+    "updatedAt": "2026-07-14T06:57:44.990Z",
+    "userId": "use_mrk6u8wt-x2lmz2fa6",
+    "visitId": null,
+    "action": "LOGIN_SUCCESS",
+    "details": "User logged in successfully",
+    "timestamp": "2026-07-14T06:57:44.987Z"
+  },
+  {
+    "id": "aud_mrkesmc1-q3i14bec1",
+    "createdAt": "2026-07-14T08:48:26.641Z",
+    "updatedAt": "2026-07-14T08:48:26.641Z",
+    "userId": "use_mrk6u8se-lnrulganh",
+    "visitId": null,
+    "action": "LOGIN_SUCCESS",
+    "details": "User logged in successfully",
+    "timestamp": "2026-07-14T08:48:26.640Z"
+  },
+  {
+    "id": "aud_mrketiug-zfgy5bvua",
+    "createdAt": "2026-07-14T08:49:08.776Z",
+    "updatedAt": "2026-07-14T08:49:08.776Z",
+    "userId": "use_mrk6u8x6-8vckcauq6",
+    "visitId": null,
+    "action": "LOGIN_SUCCESS",
+    "details": "User logged in successfully",
+    "timestamp": "2026-07-14T08:49:08.772Z"
+  },
+  {
+    "id": "aud_mrkfa9lc-93rmntgh8",
+    "createdAt": "2026-07-14T09:02:09.936Z",
+    "updatedAt": "2026-07-14T09:02:09.936Z",
+    "userId": "use_mrk6u8se-lnrulganh",
+    "visitId": null,
+    "action": "LOGIN_SUCCESS",
+    "details": "test",
+    "timestamp": "2026-07-14T09:02:09.934Z"
+  },
+  {
+    "id": "aud_mrkfd09d-8wy2m7u6r",
+    "createdAt": "2026-07-14T09:04:17.809Z",
+    "updatedAt": "2026-07-14T09:04:17.809Z",
+    "userId": "use_mrk6u8se-lnrulganh",
+    "visitId": null,
+    "action": "LOGIN_SUCCESS",
+    "details": "User logged in successfully",
+    "timestamp": "2026-07-14T09:04:17.807Z"
+  },
+  {
+    "id": "aud_mrkfu06w-na2omfs4q",
+    "createdAt": "2026-07-14T09:17:30.872Z",
+    "updatedAt": "2026-07-14T09:17:30.872Z",
+    "userId": "use_mrk6u8wt-x2lmz2fa6",
+    "visitId": null,
+    "action": "LOGIN_SUCCESS",
+    "details": "User logged in successfully",
+    "timestamp": "2026-07-14T09:17:30.871Z"
+  },
+  {
+    "id": "aud_mrkfvayz-2kji6ed4u",
+    "createdAt": "2026-07-14T09:18:31.499Z",
+    "updatedAt": "2026-07-14T09:18:31.499Z",
+    "userId": "use_mrk6u8uk-93bcj79h9",
+    "visitId": null,
+    "action": "LOGIN_SUCCESS",
+    "details": "User logged in successfully",
+    "timestamp": "2026-07-14T09:18:31.498Z"
+  },
+  {
+    "id": "aud_mrkfynm8-kt1oqbuo2",
+    "createdAt": "2026-07-14T09:21:07.856Z",
+    "updatedAt": "2026-07-14T09:21:07.856Z",
+    "userId": "use_mrk6u8wy-ej3cs35tx",
+    "visitId": null,
+    "action": "LOGIN_SUCCESS",
+    "details": "User logged in successfully",
+    "timestamp": "2026-07-14T09:21:07.855Z"
+  },
+  {
+    "id": "aud_mrkgmsug-gdlpfj2wk",
+    "createdAt": "2026-07-14T09:39:54.376Z",
+    "updatedAt": "2026-07-14T09:39:54.377Z",
+    "userId": "use_mrk6u8wt-x2lmz2fa6",
+    "visitId": null,
+    "action": "LOGIN_SUCCESS",
+    "details": "User logged in successfully",
+    "timestamp": "2026-07-14T09:39:54.368Z"
+  },
+  {
+    "id": "aud_mrkgvcxn-4byhrh4zu",
+    "createdAt": "2026-07-14T09:46:33.659Z",
+    "updatedAt": "2026-07-14T09:46:33.659Z",
+    "userId": "use_mrk6u8uk-93bcj79h9",
+    "visitId": null,
+    "action": "LOGIN_SUCCESS",
+    "details": "User logged in successfully",
+    "timestamp": "2026-07-14T09:46:33.652Z"
+  },
+  {
+    "id": "aud_mrkgzopa-x11gcrc7e",
+    "createdAt": "2026-07-14T09:49:55.534Z",
+    "updatedAt": "2026-07-14T09:49:55.534Z",
+    "userId": "use_mrk6u8wt-x2lmz2fa6",
+    "visitId": null,
+    "action": "LOGIN_SUCCESS",
+    "details": "User logged in successfully",
+    "timestamp": "2026-07-14T09:49:55.533Z"
+  },
+  {
+    "id": "aud_mrkh0szj-1nqzc5afd",
+    "createdAt": "2026-07-14T09:50:47.743Z",
+    "updatedAt": "2026-07-14T09:50:47.743Z",
+    "userId": "use_mrk6u8wt-x2lmz2fa6",
+    "visitId": null,
+    "action": "LOGIN_SUCCESS",
+    "details": "User logged in successfully",
+    "timestamp": "2026-07-14T09:50:47.740Z"
+  },
+  {
+    "id": "aud_mrkh6ucv-k7rgvmhcd",
+    "createdAt": "2026-07-14T09:55:29.455Z",
+    "updatedAt": "2026-07-14T09:55:29.455Z",
+    "userId": "use_mrk6u8wt-x2lmz2fa6",
+    "visitId": null,
+    "action": "LOGIN_SUCCESS",
+    "details": "User logged in successfully",
+    "timestamp": "2026-07-14T09:55:29.453Z"
+  },
+  {
+    "id": "aud_mrkh8pnc-3nfpuj2gb",
+    "createdAt": "2026-07-14T09:56:56.664Z",
+    "updatedAt": "2026-07-14T09:56:56.664Z",
+    "userId": "use_mrk6u8se-lnrulganh",
+    "visitId": null,
+    "action": "LOGIN_SUCCESS",
+    "details": "User logged in successfully",
+    "timestamp": "2026-07-14T09:56:56.662Z"
+  },
+  {
+    "id": "aud_mrkhbhog-c8gkfzgqs",
+    "createdAt": "2026-07-14T09:59:06.304Z",
+    "updatedAt": "2026-07-14T09:59:06.304Z",
+    "userId": "use_mrk6u8se-lnrulganh",
+    "visitId": null,
+    "action": "EMPLOYEE_CREATED",
+    "details": "Admin created employee account: Karupannan (karupannan@gmail.com)",
+    "timestamp": "2026-07-14T09:59:06.301Z"
+  },
+  {
+    "id": "aud_mrkhcuaz-6flaheftx",
+    "createdAt": "2026-07-14T10:00:09.323Z",
+    "updatedAt": "2026-07-14T10:00:09.323Z",
+    "userId": "use_mrk6u8se-lnrulganh",
+    "visitId": null,
+    "action": "ROOM_CREATED",
+    "details": "Admin created meeting room: Discussion ",
+    "timestamp": "2026-07-14T10:00:09.320Z"
+  },
+  {
+    "id": "aud_mrkhiy0f-divk3dk4t",
+    "createdAt": "2026-07-14T10:04:54.063Z",
+    "updatedAt": "2026-07-14T10:04:54.063Z",
+    "userId": "SYSTEM",
+    "visitId": "vis_mrkhixzx-q70b71hr6",
+    "action": "VISIT_REGISTERED",
+    "details": "Visitor Deepan registered for host Karupannan",
+    "timestamp": "2026-07-14T10:04:54.061Z"
+  },
+  {
+    "id": "aud_mrkhjcpy-b1hqbg1nt",
+    "createdAt": "2026-07-14T10:05:13.126Z",
+    "updatedAt": "2026-07-14T10:05:13.126Z",
+    "userId": "use_mrk6u8se-lnrulganh",
+    "visitId": null,
+    "action": "LOGIN_SUCCESS",
+    "details": "User logged in successfully",
+    "timestamp": "2026-07-14T10:05:13.124Z"
+  },
+  {
+    "id": "aud_mrkhk8x3-taexgtcq4",
+    "createdAt": "2026-07-14T10:05:54.855Z",
+    "updatedAt": "2026-07-14T10:05:54.855Z",
+    "userId": "use_mrk6u8uk-93bcj79h9",
+    "visitId": null,
+    "action": "LOGIN_SUCCESS",
+    "details": "User logged in successfully",
+    "timestamp": "2026-07-14T10:05:54.853Z"
+  },
+  {
+    "id": "aud_mrkhl3tw-0qkzktwpy",
+    "createdAt": "2026-07-14T10:06:34.916Z",
+    "updatedAt": "2026-07-14T10:06:34.916Z",
+    "userId": "use_mrk6u8wy-ej3cs35tx",
+    "visitId": null,
+    "action": "LOGIN_SUCCESS",
+    "details": "User logged in successfully",
+    "timestamp": "2026-07-14T10:06:34.913Z"
+  },
+  {
+    "id": "aud_mrkhlr7f-ksc8iwg74",
+    "createdAt": "2026-07-14T10:07:05.211Z",
+    "updatedAt": "2026-07-14T10:07:05.211Z",
+    "userId": "use_mrkhbho6-9g2yh2lqd",
+    "visitId": null,
+    "action": "LOGIN_SUCCESS",
+    "details": "User logged in successfully",
+    "timestamp": "2026-07-14T10:07:05.208Z"
+  },
+  {
+    "id": "aud_mrkhquw8-dcf2zy9yc",
+    "createdAt": "2026-07-14T10:11:03.272Z",
+    "updatedAt": "2026-07-14T10:11:03.272Z",
+    "userId": "use_mrkhbho6-9g2yh2lqd",
+    "visitId": null,
+    "action": "LOGIN_SUCCESS",
+    "details": "User logged in successfully",
+    "timestamp": "2026-07-14T10:11:03.269Z"
+  },
+  {
+    "id": "aud_mrkhrk4f-he0uktxsu",
+    "createdAt": "2026-07-14T10:11:35.967Z",
+    "updatedAt": "2026-07-14T10:11:35.967Z",
+    "userId": "use_mrkhbho6-9g2yh2lqd",
+    "visitId": "vis_mrkhixzx-q70b71hr6",
+    "action": "VISIT_APPROVED",
+    "details": "Host approved visit for visitor ID: vis_mrkhixzp-agyeyy3oc. Remarks: Meeting is rescheduled at 5PM",
+    "timestamp": "2026-07-14T10:11:35.965Z"
+  },
+  {
+    "id": "aud_mrkhs53u-pmthldvl9",
+    "createdAt": "2026-07-14T10:12:03.162Z",
+    "updatedAt": "2026-07-14T10:12:03.162Z",
+    "userId": "use_mrk6u8uk-93bcj79h9",
+    "visitId": null,
+    "action": "LOGIN_SUCCESS",
+    "details": "User logged in successfully",
+    "timestamp": "2026-07-14T10:12:03.150Z"
+  },
+  {
+    "id": "aud_mrkht18c-eu3w8235l",
+    "createdAt": "2026-07-14T10:12:44.796Z",
+    "updatedAt": "2026-07-14T10:12:44.796Z",
+    "userId": "use_mrk6u8uk-93bcj79h9",
+    "visitId": "vis_mrkhixzx-q70b71hr6",
+    "action": "CHECK_IN",
+    "details": "Checked in visitor. Room: mee_mrkhcuas-pq8kmw11f, Badge: B-139",
+    "timestamp": "2026-07-14T10:12:44.793Z"
+  },
+  {
+    "id": "aud_mrkhtbcc-4zckjhdiy",
+    "createdAt": "2026-07-14T10:12:57.900Z",
+    "updatedAt": "2026-07-14T10:12:57.900Z",
+    "userId": "use_mrk6u8wt-x2lmz2fa6",
+    "visitId": null,
+    "action": "LOGIN_SUCCESS",
+    "details": "User logged in successfully",
+    "timestamp": "2026-07-14T10:12:57.897Z"
+  },
+  {
+    "id": "aud_mrkhunwz-expfemjkd",
+    "createdAt": "2026-07-14T10:14:00.851Z",
+    "updatedAt": "2026-07-14T10:14:00.851Z",
+    "userId": "use_mrk6u8wt-x2lmz2fa6",
+    "visitId": null,
+    "action": "QR_SCAN_FAILED",
+    "details": "Scanned invalid or non-existent QR token: B-139",
+    "timestamp": "2026-07-14T10:14:00.849Z"
+  },
+  {
+    "id": "aud_mrkhxd0d-xruzlpny7",
+    "createdAt": "2026-07-14T10:16:06.685Z",
+    "updatedAt": "2026-07-14T10:16:06.685Z",
+    "userId": "use_mrk6u8wt-x2lmz2fa6",
+    "visitId": null,
+    "action": "QR_SCAN_FAILED",
+    "details": "Scanned invalid or non-existent QR token: VIS_MRK89JHB-AAHRF",
+    "timestamp": "2026-07-14T10:16:06.684Z"
+  },
+  {
+    "id": "aud_mrkhy89r-22dg12uud",
+    "createdAt": "2026-07-14T10:16:47.199Z",
+    "updatedAt": "2026-07-14T10:16:47.199Z",
+    "userId": "use_mrk6u8wt-x2lmz2fa6",
+    "visitId": null,
+    "action": "QR_SCAN_FAILED",
+    "details": "Scanned invalid or non-existent QR token: VIS_MRK89JHB-AAHRF",
+    "timestamp": "2026-07-14T10:16:47.197Z"
+  },
+  {
+    "id": "aud_mrki4s6i-x37emwnz6",
+    "createdAt": "2026-07-14T10:21:52.938Z",
+    "updatedAt": "2026-07-14T10:21:52.938Z",
+    "userId": "use_mrk6u8wy-ej3cs35tx",
+    "visitId": null,
+    "action": "LOGIN_SUCCESS",
+    "details": "User logged in successfully",
+    "timestamp": "2026-07-14T10:21:52.935Z"
+  },
+  {
+    "id": "aud_mrkir7g0-7jurl5epj",
+    "createdAt": "2026-07-14T10:39:19.152Z",
+    "updatedAt": "2026-07-14T10:39:19.152Z",
+    "userId": "use_mrk6u8wt-x2lmz2fa6",
+    "visitId": null,
+    "action": "LOGIN_SUCCESS",
+    "details": "User logged in successfully",
+    "timestamp": "2026-07-14T10:39:19.149Z"
+  },
+  {
+    "id": "aud_mrkirefw-t3sbmma13",
+    "createdAt": "2026-07-14T10:39:28.220Z",
+    "updatedAt": "2026-07-14T10:39:28.220Z",
+    "userId": "use_mrk6u8wt-x2lmz2fa6",
+    "visitId": null,
+    "action": "QR_SCAN_FAILED",
+    "details": "Scanned invalid or non-existent QR token: VIS_MRK89JHB-AAHRF",
+    "timestamp": "2026-07-14T10:39:28.215Z"
+  },
+  {
+    "id": "aud_mrkirtp5-265bid3c9",
+    "createdAt": "2026-07-14T10:39:47.993Z",
+    "updatedAt": "2026-07-14T10:39:47.993Z",
+    "userId": "use_mrk6u8uk-93bcj79h9",
+    "visitId": null,
+    "action": "LOGIN_SUCCESS",
+    "details": "User logged in successfully",
+    "timestamp": "2026-07-14T10:39:47.989Z"
+  },
+  {
+    "id": "aud_mrkj0yzf-t9gglj9uv",
+    "createdAt": "2026-07-14T10:46:54.747Z",
+    "updatedAt": "2026-07-14T10:46:54.747Z",
+    "userId": "use_mrk6u8uk-93bcj79h9",
+    "visitId": null,
+    "action": "LOGIN_SUCCESS",
+    "details": "User logged in successfully",
+    "timestamp": "2026-07-14T10:46:54.745Z"
+  },
+  {
+    "id": "aud_mrkjax2g-rc2odoz1v",
+    "createdAt": "2026-07-14T10:54:38.824Z",
+    "updatedAt": "2026-07-14T10:54:38.824Z",
+    "userId": "use_mrk6u8se-lnrulganh",
+    "visitId": null,
+    "action": "LOGIN_SUCCESS",
+    "details": "User logged in successfully",
+    "timestamp": "2026-07-14T10:54:38.820Z"
+  },
+  {
+    "id": "aud_mrkjb503-w2juonl5w",
+    "createdAt": "2026-07-14T10:54:49.107Z",
+    "updatedAt": "2026-07-14T10:54:49.107Z",
+    "userId": "use_mrk6u8uk-93bcj79h9",
+    "visitId": null,
+    "action": "LOGIN_SUCCESS",
+    "details": "User logged in successfully",
+    "timestamp": "2026-07-14T10:54:49.103Z"
+  },
+  {
+    "id": "aud_mrkjbcl3-9rrjdcd14",
+    "createdAt": "2026-07-14T10:54:58.935Z",
+    "updatedAt": "2026-07-14T10:54:58.935Z",
+    "userId": "use_mrk6u8wy-ej3cs35tx",
+    "visitId": null,
+    "action": "LOGIN_SUCCESS",
+    "details": "User logged in successfully",
+    "timestamp": "2026-07-14T10:54:58.932Z"
+  },
+  {
+    "id": "aud_mrkjblz1-dzfqzb7l1",
+    "createdAt": "2026-07-14T10:55:11.101Z",
+    "updatedAt": "2026-07-14T10:55:11.101Z",
+    "userId": "use_mrk6u8uk-93bcj79h9",
+    "visitId": null,
+    "action": "LOGIN_SUCCESS",
+    "details": "User logged in successfully",
+    "timestamp": "2026-07-14T10:55:11.087Z"
+  },
+  {
+    "id": "aud_mrkjd8t5-8dtv35ouc",
+    "createdAt": "2026-07-14T10:56:27.353Z",
+    "updatedAt": "2026-07-14T10:56:27.353Z",
+    "userId": "use_mrk6u8wt-x2lmz2fa6",
+    "visitId": null,
+    "action": "LOGIN_SUCCESS",
+    "details": "User logged in successfully",
+    "timestamp": "2026-07-14T10:56:27.350Z"
+  },
+  {
+    "id": "aud_mrkjdcvw-2pjt2ghs2",
+    "createdAt": "2026-07-14T10:56:32.636Z",
+    "updatedAt": "2026-07-14T10:56:32.636Z",
+    "userId": "use_mrk6u8wt-x2lmz2fa6",
+    "visitId": "vis_mrk89jhb-aahrfj7zh",
+    "action": "GATE_CHECK_OUT",
+    "details": "Security guard confirmed exit. Checked out visitor.",
+    "timestamp": "2026-07-14T10:56:32.634Z"
+  },
+  {
+    "id": "aud_mrkjl3yh-oa0mac1qw",
+    "createdAt": "2026-07-14T11:02:34.313Z",
+    "updatedAt": "2026-07-14T11:02:34.313Z",
+    "userId": "use_mrk6u8uk-93bcj79h9",
+    "visitId": null,
+    "action": "LOGIN_SUCCESS",
+    "details": "User logged in successfully",
+    "timestamp": "2026-07-14T11:02:34.310Z"
+  },
+  {
+    "id": "aud_mrkjlhbe-jjq5vzsva",
+    "createdAt": "2026-07-14T11:02:51.626Z",
+    "updatedAt": "2026-07-14T11:02:51.626Z",
+    "userId": "use_mrk6u8wy-ej3cs35tx",
+    "visitId": null,
+    "action": "LOGIN_SUCCESS",
+    "details": "User logged in successfully",
+    "timestamp": "2026-07-14T11:02:51.623Z"
+  },
+  {
+    "id": "aud_mrkjlu4n-2vy5g5z1w",
+    "createdAt": "2026-07-14T11:03:08.231Z",
+    "updatedAt": "2026-07-14T11:03:08.231Z",
+    "userId": "use_mrk6u8se-lnrulganh",
+    "visitId": null,
+    "action": "LOGIN_SUCCESS",
+    "details": "User logged in successfully",
+    "timestamp": "2026-07-14T11:03:08.217Z"
+  },
+  {
+    "id": "aud_mrkjm5i3-7tj2iokr2",
+    "createdAt": "2026-07-14T11:03:22.971Z",
+    "updatedAt": "2026-07-14T11:03:22.971Z",
+    "userId": "use_mrk6u8se-lnrulganh",
+    "visitId": null,
+    "action": "EMPLOYEE_DEACTIVATED",
+    "details": "Admin toggled status of Jane Smith to Inactive",
+    "timestamp": "2026-07-14T11:03:22.967Z"
+  },
+  {
+    "id": "aud_mrkjmjl0-9k15peu6z",
+    "createdAt": "2026-07-14T11:03:41.220Z",
+    "updatedAt": "2026-07-14T11:03:41.220Z",
+    "userId": "use_mrk6u8se-lnrulganh",
+    "visitId": null,
+    "action": "LOGIN_SUCCESS",
+    "details": "User logged in successfully",
+    "timestamp": "2026-07-14T11:03:41.217Z"
+  },
+  {
+    "id": "aud_mrkjncal-vtnxq42bo",
+    "createdAt": "2026-07-14T11:04:18.429Z",
+    "updatedAt": "2026-07-14T11:04:18.429Z",
+    "userId": "use_mrk6u8se-lnrulganh",
+    "visitId": null,
+    "action": "EMPLOYEE_DEACTIVATED",
+    "details": "Admin toggled status of John Doe to Inactive",
+    "timestamp": "2026-07-14T11:04:18.424Z"
+  },
+  {
+    "id": "aud_mrkjnppr-vxsodc81h",
+    "createdAt": "2026-07-14T11:04:35.823Z",
+    "updatedAt": "2026-07-14T11:04:35.823Z",
+    "userId": "use_mrk6u8wy-ej3cs35tx",
+    "visitId": null,
+    "action": "LOGIN_BLOCKED",
+    "details": "Inactive user attempted login: john.doe@vms.com",
+    "timestamp": "2026-07-14T11:04:35.820Z"
+  }
+]

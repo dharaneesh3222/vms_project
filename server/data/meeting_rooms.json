@@ -1,0 +1,47 @@
+[
+  {
+    "id": "mee_mrk6u9h8-4vy5ko4wd",
+    "createdAt": "2026-07-14T05:05:46.364Z",
+    "updatedAt": "2026-07-14T05:05:46.365Z",
+    "name": "Room 101",
+    "floor": "1st Floor",
+    "capacity": 8,
+    "isAvailable": true
+  },
+  {
+    "id": "mee_mrk6u9hb-sruzjf5jl",
+    "createdAt": "2026-07-14T05:05:46.367Z",
+    "updatedAt": "2026-07-14T05:05:46.367Z",
+    "name": "Boardroom",
+    "floor": "2nd Floor",
+    "capacity": 20,
+    "isAvailable": true
+  },
+  {
+    "id": "mee_mrk6u9he-n25gilvn2",
+    "createdAt": "2026-07-14T05:05:46.370Z",
+    "updatedAt": "2026-07-14T05:05:46.370Z",
+    "name": "Huddle Room A",
+    "floor": "3rd Floor",
+    "capacity": 4,
+    "isAvailable": true
+  },
+  {
+    "id": "mee_mrk6u9hf-ex7q9l3nf",
+    "createdAt": "2026-07-14T05:05:46.371Z",
+    "updatedAt": "2026-07-14T05:05:46.371Z",
+    "name": "Conference Room B",
+    "floor": "3rd Floor",
+    "capacity": 12,
+    "isAvailable": true
+  },
+  {
+    "id": "mee_mrkhcuas-pq8kmw11f",
+    "createdAt": "2026-07-14T10:00:09.316Z",
+    "updatedAt": "2026-07-14T10:00:09.316Z",
+    "name": "Discussion ",
+    "floor": "2",
+    "capacity": 2,
+    "isAvailable": true
+  }
+]
