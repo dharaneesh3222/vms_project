@@ -10,11 +10,17 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 // 1. Initialize Firebase Admin
-// Resolving path to the firebase-service-account.json in the project root
-const serviceAccountPath = path.join(__dirname, '..', '..', 'firebase-service-account.json');
+// Resolving path to the firebase-service-account.json
+// 1. Try Render's secure secrets folder first
+let serviceAccountPath = '/etc/secrets/firebase-service-account.json';
 
 if (!fs.existsSync(serviceAccountPath)) {
-  console.error("FIREBASE ERROR: Missing firebase-service-account.json in the root folder!");
+  // 2. Fallback to local project root
+  serviceAccountPath = path.join(__dirname, '..', '..', 'firebase-service-account.json');
+}
+
+if (!fs.existsSync(serviceAccountPath)) {
+  console.error("FIREBASE ERROR: Missing firebase-service-account.json in the root folder or /etc/secrets!");
   process.exit(1);
 }
 
