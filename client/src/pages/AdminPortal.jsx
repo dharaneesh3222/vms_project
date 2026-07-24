@@ -359,7 +359,19 @@ export default function AdminPortal() {
     }
   };
 
-  if (!user) return null;
+  if (!user) {
+    return (
+      <div className="container-fluid min-vh-100 p-0 d-flex flex-column align-items-center justify-content-center" style={{ background: '#0a0b10', color: '#fff' }}>
+        <div className="text-center p-4">
+          <div className="spinner-border text-primary mb-3" role="status" style={{ width: '3rem', height: '3rem' }}>
+            <span className="visually-hidden">Loading...</span>
+          </div>
+          <h4 className="h6 text-light fw-medium mb-1">Loading Admin Portal...</h4>
+          <p className="text-secondary small">Authenticating session...</p>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="container-fluid min-vh-100 p-0 d-flex flex-column" style={{ background: '#0a0b10' }}>

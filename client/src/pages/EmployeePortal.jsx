@@ -37,17 +37,24 @@ export default function EmployeePortal() {
 
   useEffect(() => {
     const storedUser = localStorage.getItem('vms_user');
-    if (!storedUser) {
+    const token = localStorage.getItem('vms_token');
+    if (!storedUser || !token) {
       navigate('/login');
       return;
     }
-    const parsedUser = JSON.parse(storedUser);
-    if (parsedUser.role !== 'employee') {
+    try {
+      const parsedUser = JSON.parse(storedUser);
+      if (parsedUser.role !== 'employee' && parsedUser.role !== 'admin') {
+        navigate('/login');
+        return;
+      }
+      setUser(parsedUser);
+      loadData();
+    } catch (err) {
+      localStorage.removeItem('vms_user');
+      localStorage.removeItem('vms_token');
       navigate('/login');
-      return;
     }
-    setUser(parsedUser);
-    loadData();
   }, [navigate]);
 
   const handleAction = async (visitId, action) => {
@@ -82,7 +89,19 @@ export default function EmployeePortal() {
     navigate('/login');
   };
 
-  if (!user) return null;
+  if (!user) {
+    return (
+      <div className="container-fluid min-vh-100 p-0 d-flex flex-column align-items-center justify-content-center" style={{ background: '#0a0b10', color: '#fff' }}>
+        <div className="text-center p-4">
+          <div className="spinner-border text-success mb-3" role="status" style={{ width: '3rem', height: '3rem' }}>
+            <span className="visually-hidden">Loading...</span>
+          </div>
+          <h4 className="h6 text-light fw-medium mb-1">Loading Employee Portal...</h4>
+          <p className="text-secondary small">Authenticating session...</p>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="container-fluid min-vh-100 p-0 d-flex flex-column" style={{ background: '#0a0b10' }}>
