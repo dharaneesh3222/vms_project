@@ -115,6 +115,7 @@ export const sendVisitorApprovalNotification = async ({
   purpose,
   visitId,
   visitorPhone,
+  meetingRoomName = 'Host Desk',
   orgName = 'Acme Corporation'
 }) => {
   if (!visitorEmail) {
@@ -146,6 +147,7 @@ export const sendVisitorApprovalNotification = async ({
 
           <table style="width: 100%; border-collapse: collapse; margin-top: 14px; color: #e5e7eb; font-size: 14px;">
             <tr><td style="padding: 6px 0; color: #9ca3af;">Host Employee:</td><td style="font-weight: bold; color: #60a5fa;">${hostName}</td></tr>
+            <tr><td style="padding: 6px 0; color: #9ca3af;">Allocated Room:</td><td style="font-weight: bold; color: #10b981;">${meetingRoomName}</td></tr>
             <tr><td style="padding: 6px 0; color: #9ca3af;">Scheduled Date:</td><td>${scheduledDate} ${scheduledTime ? 'at ' + scheduledTime : ''}</td></tr>
             <tr><td style="padding: 6px 0; color: #9ca3af;">Purpose of Visit:</td><td>${purpose}</td></tr>
             <tr><td style="padding: 6px 0; color: #9ca3af;">Visit ID:</td><td style="font-family: monospace; color: #a7f3d0;">${visitId}</td></tr>

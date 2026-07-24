@@ -8,6 +8,8 @@ export default function EmployeePortal() {
   const [user, setUser] = useState(null);
   const [pending, setPending] = useState([]);
   const [visits, setVisits] = useState([]);
+  const [rooms, setRooms] = useState([]);
+  const [selectedRooms, setSelectedRooms] = useState({});
   const [loading, setLoading] = useState(true);
   const [actionLoading, setActionLoading] = useState({});
   const [remarks, setRemarks] = useState({});
@@ -18,6 +20,12 @@ export default function EmployeePortal() {
     try {
       const pendingData = await api.get('/employee/pending');
       const visitsData = await api.get('/employee/visits');
+      try {
+        const roomsData = await api.get('/employee/rooms');
+        setRooms(roomsData || []);
+      } catch (err) {
+        // rooms fallback if empty
+      }
       setPending(pendingData);
       setVisits(visitsData);
     } catch (err) {
@@ -48,7 +56,10 @@ export default function EmployeePortal() {
     
     try {
       const path = `/employee/${action}/${visitId}`;
-      const payload = { remarks: remarks[visitId] || '' };
+      const payload = { 
+        remarks: remarks[visitId] || '',
+        roomId: selectedRooms[visitId] || null
+      };
       await api.post(path, payload);
       
       // Remove from pending locally and refresh
@@ -230,6 +241,26 @@ export default function EmployeePortal() {
                           <span className="text-primary fw-semibold small d-block mb-1">Visit Purpose</span>
                           <span className="text-white small">{visit.purpose}</span>
                         </div>
+                      </div>
+
+                      {/* Meeting Room Allocation Selection */}
+                      <div className="mb-3">
+                        <label className="form-label small text-secondary fw-semibold d-flex align-items-center gap-1.5 mb-1">
+                          <MapPin size={14} className="text-primary" /> Allocate Meeting Room (Optional)
+                        </label>
+                        <select
+                          className="form-select form-control-custom py-2 small text-white"
+                          value={selectedRooms[visit.id] || ''}
+                          onChange={(e) => setSelectedRooms(prev => ({ ...prev, [visit.id]: e.target.value }))}
+                          style={{ fontSize: '13px' }}
+                        >
+                          <option value="">No Specific Room (Host Desk)</option>
+                          {rooms.filter(r => r.isAvailable).map(room => (
+                            <option key={room.id} value={room.id}>
+                              {room.name} (Capacity: {room.capacity} | Floor {room.floor || 1})
+                            </option>
+                          ))}
+                        </select>
                       </div>
 
                       {/* Remarks Input */}

@@ -74,10 +74,22 @@ router.get('/pending', async (req, res) => {
   }
 });
 
+// GET /api/employee/rooms - List all meeting rooms
+router.get('/rooms', async (req, res) => {
+  try {
+    const rooms = await db.find('meeting_rooms');
+    return res.json(rooms);
+  } catch (err) {
+    console.error('Employee rooms fetch error:', err);
+    return res.status(500).json({ message: 'Failed to retrieve meeting rooms' });
+  }
+});
+
 // POST /api/employee/approve/:visitId - Approve a visitor request
 router.post('/approve/:visitId', async (req, res) => {
   const { visitId } = req.params;
-  const { remarks } = req.body;
+  const { remarks, roomId, meetingRoomId } = req.body;
+  const allocatedRoomId = roomId || meetingRoomId || null;
 
   try {
     const visit = await db.findOne('visits', { id: visitId, hostEmployeeId: req.user.id });
@@ -89,11 +101,17 @@ router.post('/approve/:visitId', async (req, res) => {
       return res.status(400).json({ message: `Visit request is already ${visit.status}` });
     }
 
-    // Update Visit Status
-    const updatedVisit = await db.update('visits', { id: visitId }, {
+    // Update Visit Status & Allocated Room
+    const updatePayload = {
       status: 'Approved',
       approvalDate: new Date().toISOString()
-    });
+    };
+    if (allocatedRoomId) {
+      updatePayload.meetingRoomId = allocatedRoomId;
+      await db.update('meeting_rooms', { id: allocatedRoomId }, { isAvailable: false });
+    }
+
+    const updatedVisit = await db.update('visits', { id: visitId }, updatePayload);
 
     // Update Approval Record
     await db.update('approvals', { visitId }, {
@@ -103,7 +121,6 @@ router.post('/approve/:visitId', async (req, res) => {
     });
 
     // Send Notification to Receptionist Queue (broadcast)
-    // We can insert a notification for all receptionists or just log it
     const receptionists = await db.find('users', { role: 'receptionist' });
     for (const recep of receptionists) {
       await db.insert('notifications', {
@@ -115,6 +132,12 @@ router.post('/approve/:visitId', async (req, res) => {
         sentAt: new Date().toISOString(),
         isRead: false
       });
+    }
+
+    // Fetch Allocated Room Details for Email & Pass
+    const room = allocatedRoomId ? await db.findOne('meeting_rooms', { id: allocatedRoomId }) : null;
+    const roomNameFormatted = room ? `${room.name} (Floor ${room.floor || 1})` : 'Host Desk';
+
     // Send Notification to Visitor via Email
     const visitor = await db.findOne('visitors', { id: visit.visitorId });
     if (visitor) {
@@ -126,11 +149,12 @@ router.post('/approve/:visitId', async (req, res) => {
         scheduledTime: visit.scheduledTime,
         purpose: visit.purpose,
         visitId: visit.id,
-        visitorPhone: visitor.phoneNumber
+        visitorPhone: visitor.phoneNumber,
+        meetingRoomName: roomNameFormatted
       }).catch(err => console.error('Visitor approval email error:', err));
     }
 
-    await logAction(req.user.id, visitId, 'VISIT_APPROVED', `Host approved visit for visitor ID: ${visit.visitorId}. Remarks: ${remarks || 'None'}`);
+    await logAction(req.user.id, visitId, 'VISIT_APPROVED', `Host approved visit. Room: ${roomNameFormatted}. Remarks: ${remarks || 'None'}`);
 
     return res.json({
       message: 'Visit request successfully approved!',
