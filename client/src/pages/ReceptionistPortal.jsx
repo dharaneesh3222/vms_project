@@ -13,6 +13,7 @@ export default function ReceptionistPortal() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
   const [successMsg, setSuccessMsg] = useState('');
+  const [previewPhoto, setPreviewPhoto] = useState(null);
 
   // Modals / Form State
   const [showWalkinModal, setShowWalkinModal] = useState(false);
@@ -323,7 +324,12 @@ export default function ReceptionistPortal() {
                   {queue.map((visit) => (
                     <tr key={visit.id} style={{ borderColor: 'var(--border-color)' }}>
                       <td>
-                        <div className="rounded-circle overflow-hidden bg-black border" style={{ width: '40px', height: '40px', borderColor: 'var(--border-color)' }}>
+                        <div 
+                          className="rounded-circle overflow-hidden bg-black border position-relative cursor-pointer hover-opacity" 
+                          style={{ width: '44px', height: '44px', borderColor: 'var(--border-color)', cursor: 'pointer' }}
+                          title="Click to View Photo"
+                          onClick={() => visit.visitorPhoto && setPreviewPhoto({ url: visit.visitorPhoto, name: visit.visitorName, company: visit.visitorCompany, phone: visit.visitorPhone })}
+                        >
                           {visit.visitorPhoto ? (
                             <img src={visit.visitorPhoto} alt={visit.visitorName} className="w-100 h-100" style={{ objectFit: 'cover' }} />
                           ) : (
@@ -526,6 +532,27 @@ export default function ReceptionistPortal() {
                   <button type="submit" className="btn btn-success text-white">Confirm Entry & Issue Badge</button>
                 </div>
               </form>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Image Preview Modal */}
+      {previewPhoto && (
+        <div className="modal fade show d-block" tabIndex="-1" style={{ backgroundColor: 'rgba(0, 0, 0, 0.85)', backdropFilter: 'blur(6px)', zIndex: 1060 }}>
+          <div className="modal-dialog modal-dialog-centered" style={{ maxWidth: '440px' }}>
+            <div className="glass-card modal-content border-secondary overflow-hidden text-center p-4">
+              <div className="d-flex justify-content-between align-items-center mb-3">
+                <h5 className="h6 text-white fw-bold m-0">{previewPhoto.name || 'Visitor Identity Photo'}</h5>
+                <button type="button" className="btn-close btn-close-white" onClick={() => setPreviewPhoto(null)}></button>
+              </div>
+              <div className="rounded-3 overflow-hidden border border-secondary mb-3 bg-black" style={{ maxHeight: '380px' }}>
+                <img src={previewPhoto.url} alt="Visitor Photo" className="w-100 h-100" style={{ objectFit: 'contain' }} />
+              </div>
+              {previewPhoto.company && (
+                <p className="text-secondary small mb-3">{previewPhoto.company} · {previewPhoto.phone}</p>
+              )}
+              <button className="btn btn-outline-secondary btn-sm w-100" onClick={() => setPreviewPhoto(null)}>Close Preview</button>
             </div>
           </div>
         </div>
