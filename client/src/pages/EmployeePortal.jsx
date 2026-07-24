@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { LogOut, Check, X, Shield, Users, Clock, Calendar, CheckSquare, MessageSquare, RefreshCw, User, Briefcase, FileText, Hourglass, ShieldCheck, Activity } from 'lucide-react';
+import { LogOut, Check, X, Shield, Users, Clock, Calendar, CheckSquare, MessageSquare, RefreshCw, User, Briefcase, FileText, Hourglass, ShieldCheck, Activity, MapPin } from 'lucide-react';
 import { api } from '../utils/api';
 
 export default function EmployeePortal() {
@@ -10,7 +10,6 @@ export default function EmployeePortal() {
   const [visits, setVisits] = useState([]);
   const [rooms, setRooms] = useState([]);
   const [selectedRooms, setSelectedRooms] = useState({});
-  const [previewPhoto, setPreviewPhoto] = useState(null);
   const [loading, setLoading] = useState(true);
   const [actionLoading, setActionLoading] = useState({});
   const [remarks, setRemarks] = useState({});
@@ -224,12 +223,7 @@ export default function EmployeePortal() {
 
                       <div className="d-flex flex-column flex-sm-row justify-content-between gap-3 align-items-start mb-4 ps-2">
                         <div className="d-flex gap-3">
-                          <div 
-                            className="rounded-circle overflow-hidden bg-black flex-shrink-0 border border-secondary border-opacity-25" 
-                            style={{ width: '56px', height: '56px', cursor: 'pointer' }}
-                            title="Click to View Full Photo"
-                            onClick={() => visit.photoUrl && setPreviewPhoto({ url: visit.photoUrl, name: visit.visitorName, company: visit.visitorCompany, phone: visit.visitorPhone })}
-                          >
+                          <div className="rounded-circle overflow-hidden bg-black flex-shrink-0 border border-secondary border-opacity-25" style={{ width: '56px', height: '56px' }}>
                             {visit.photoUrl ? (
                               <img src={visit.photoUrl} alt={visit.visitorName} className="w-100 h-100" style={{ objectFit: 'cover' }} />
                             ) : (
@@ -280,7 +274,7 @@ export default function EmployeePortal() {
                           style={{ fontSize: '13px' }}
                         >
                           <option value="">No Specific Room (Host Desk)</option>
-                          {rooms.filter(r => r.isAvailable).map(room => (
+                          {(Array.isArray(rooms) ? rooms : []).filter(r => r.isAvailable).map(room => (
                             <option key={room.id} value={room.id}>
                               {room.name} (Capacity: {room.capacity} | Floor {room.floor || 1})
                             </option>
@@ -379,27 +373,6 @@ export default function EmployeePortal() {
         </div>
 
       </main>
-
-      {/* Image Preview Modal */}
-      {previewPhoto && (
-        <div className="modal fade show d-block" tabIndex="-1" style={{ backgroundColor: 'rgba(0, 0, 0, 0.85)', backdropFilter: 'blur(6px)', zIndex: 1060 }}>
-          <div className="modal-dialog modal-dialog-centered" style={{ maxWidth: '440px' }}>
-            <div className="glass-card modal-content border-secondary overflow-hidden text-center p-4">
-              <div className="d-flex justify-content-between align-items-center mb-3">
-                <h5 className="h6 text-white fw-bold m-0">{previewPhoto.name || 'Visitor Photo'}</h5>
-                <button type="button" className="btn-close btn-close-white" onClick={() => setPreviewPhoto(null)}></button>
-              </div>
-              <div className="rounded-3 overflow-hidden border border-secondary mb-3 bg-black" style={{ maxHeight: '380px' }}>
-                <img src={previewPhoto.url} alt="Visitor Photo" className="w-100 h-100" style={{ objectFit: 'contain' }} />
-              </div>
-              {previewPhoto.company && (
-                <p className="text-secondary small mb-3">{previewPhoto.company} · {previewPhoto.phone}</p>
-              )}
-              <button className="btn btn-outline-secondary btn-sm w-100" onClick={() => setPreviewPhoto(null)}>Close Preview</button>
-            </div>
-          </div>
-        </div>
-      )}
 
     </div>
   );
