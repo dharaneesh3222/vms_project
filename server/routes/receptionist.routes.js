@@ -145,6 +145,7 @@ router.post('/walkin', async (req, res) => {
       channel: 'web',
       sentAt: new Date().toISOString(),
       isRead: false
+    });
     // Send Email Entry Pass to Walk-in Visitor
     if (visitor.email) {
       sendVisitorApprovalNotification({
