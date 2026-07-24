@@ -170,15 +170,24 @@ router.delete('/employees/:id', async (req, res) => {
   const { id } = req.params;
   try {
     const user = await db.findOne('users', { id });
-    if (!user) {
+    const emp = await db.findOne('employees', { id });
+
+    if (!user && !emp) {
       return res.status(404).json({ message: 'Employee user not found' });
     }
 
-    // Deactivate user instead of hard deletion to maintain audit log integrity
-    const newStatus = !user.isActive;
-    await db.update('users', { id }, { isActive: newStatus });
+    let newStatus = false;
+    if (user) {
+      newStatus = !user.isActive;
+      await db.update('users', { id }, { isActive: newStatus });
+    }
+    if (emp) {
+      if (!user) newStatus = !emp.isActive;
+      await db.update('employees', { id }, { isActive: newStatus });
+    }
     
-    await logAction(req.user.id, null, newStatus ? 'EMPLOYEE_REACTIVATED' : 'EMPLOYEE_DEACTIVATED', `Admin toggled status of ${user.displayName} to ${newStatus ? 'Active' : 'Inactive'}`);
+    const empName = user ? user.displayName : (emp ? emp.name : id);
+    await logAction(req.user.id, null, newStatus ? 'EMPLOYEE_REACTIVATED' : 'EMPLOYEE_DEACTIVATED', `Admin toggled status of ${empName} to ${newStatus ? 'Active' : 'Inactive'}`);
 
     return res.json({ message: `Employee status updated to ${newStatus ? 'Active' : 'Inactive'}` });
   } catch (err) {
@@ -191,10 +200,19 @@ router.delete('/employees/:id/permanent', async (req, res) => {
   const { id } = req.params;
   try {
     const user = await db.findOne('users', { id });
-    if (!user) return res.status(404).json({ message: 'Employee not found' });
+    const emp = await db.findOne('employees', { id });
 
-    await db.delete('users', { id });
-    await logAction(req.user.id, null, 'EMPLOYEE_DELETED', `Admin permanently deleted employee: ${user.email}`);
+    if (!user && !emp) return res.status(404).json({ message: 'Employee not found' });
+
+    if (user) {
+      await db.delete('users', { id });
+    }
+    if (emp) {
+      await db.delete('employees', { id });
+    }
+
+    const empName = user ? user.email : (emp ? emp.name : id);
+    await logAction(req.user.id, null, 'EMPLOYEE_DELETED', `Admin permanently deleted employee: ${empName}`);
 
     return res.json({ message: 'Employee permanently deleted.' });
   } catch (err) {
