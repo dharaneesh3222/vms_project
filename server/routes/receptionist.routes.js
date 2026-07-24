@@ -3,6 +3,7 @@ import { db } from '../database/db.js';
 import { authMiddleware } from '../middleware/auth.middleware.js';
 import { rbacMiddleware } from '../middleware/rbac.middleware.js';
 import { logAction } from '../utils/logger.js';
+import { sendVisitorApprovalNotification } from '../utils/mailer.js';
 
 const router = express.Router();
 
@@ -144,7 +145,19 @@ router.post('/walkin', async (req, res) => {
       channel: 'web',
       sentAt: new Date().toISOString(),
       isRead: false
-    });
+    // Send Email Entry Pass to Walk-in Visitor
+    if (visitor.email) {
+      sendVisitorApprovalNotification({
+        visitorEmail: visitor.email,
+        visitorName: visitor.fullName,
+        hostName: host.name,
+        scheduledDate: visit.scheduledDate,
+        scheduledTime: visit.scheduledTime,
+        purpose: visit.purpose,
+        visitId: visit.id,
+        visitorPhone: visitor.phoneNumber
+      }).catch(err => console.error('Walkin visitor email error:', err));
+    }
 
     await logAction(req.user.id, visit.id, 'WALK_IN_REGISTERED', `Receptionist registered walk-in visitor ${fullName}`);
 

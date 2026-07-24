@@ -6,6 +6,7 @@ import { fileURLToPath } from 'url';
 import QRCode from 'qrcode';
 import { db } from '../database/db.js';
 import { logAction } from '../utils/logger.js';
+import { sendHostApprovalNotification } from '../utils/mailer.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -171,6 +172,20 @@ router.post('/register', upload.fields([
       sentAt: new Date().toISOString(),
       isRead: false
     });
+
+    // 5. Send Email Notification to Host Employee
+    const hostUser = await db.findOne('users', { id: host.id });
+    sendHostApprovalNotification({
+      hostEmail: hostUser ? hostUser.email : '',
+      hostName: host.name,
+      visitorName: visitor.fullName,
+      visitorCompany: visitor.company,
+      visitorPhone: visitor.phoneNumber,
+      scheduledDate,
+      scheduledTime,
+      purpose: purpose || 'Business Meeting',
+      visitId: visit.id
+    }).catch(err => console.error('Host approval email error:', err));
 
     await logAction(null, visit.id, 'VISIT_REGISTERED', `Visitor ${fullName} registered for host ${host.name}`);
 

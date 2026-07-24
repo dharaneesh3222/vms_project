@@ -763,52 +763,46 @@ export default function AdminPortal() {
                     <input 
                       type="text" 
                       className="form-control form-control-custom" 
-                      value={settings.companyName || ''} 
+                      placeholder="e.g. Acme Corporation"
+                      value={settings.companyName !== undefined ? settings.companyName : 'Acme Corporation'} 
                       onChange={e => handleSettingChange('companyName', e.target.value)} 
+                      required
                     />
                   </div>
 
                   <div>
-                    <label className="form-label small text-secondary">Welcome Message (Registration Page)</label>
+                    <label className="form-label small text-secondary">Organization ID (Host ID)</label>
                     <input 
                       type="text" 
                       className="form-control form-control-custom" 
-                      value={settings.welcomeMessage || ''} 
-                      onChange={e => handleSettingChange('welcomeMessage', e.target.value)} 
+                      placeholder="e.g. acme-corp"
+                      value={settings.orgId !== undefined ? settings.orgId : 'acme-corp'} 
+                      onChange={e => handleSettingChange('orgId', e.target.value)} 
+                      required
                     />
+                    <span className="form-text text-muted" style={{ fontSize: '11px' }}>
+                      Unique identifier for multi-tenant isolation and host system mapping.
+                    </span>
                   </div>
 
                   <div>
-                    <label className="form-label small text-secondary">NDA Clause Agreement Text</label>
-                    <textarea 
-                      rows="4"
-                      className="form-control form-control-custom text-white" 
-                      value={settings.visitorNda || ''} 
-                      onChange={e => handleSettingChange('visitorNda', e.target.value)} 
-                    />
-                  </div>
-
-                  <div className="row">
-                    <div className="col-6">
-                      <label className="form-label small text-secondary">Gate OTP Verification Required?</label>
-                      <select 
-                        className="form-select form-control-custom"
-                        value={settings.otpRequired || 'false'}
-                        onChange={e => handleSettingChange('otpRequired', e.target.value)}
-                      >
-                        <option value="true">Yes, enforce OTP</option>
-                        <option value="false">No, bypass OTP</option>
-                      </select>
-                    </div>
-                    <div className="col-6">
-                      <label className="form-label small text-secondary">Alert Notification Security Email</label>
+                    <label className="form-label small text-secondary">Organization System Email (Notification Sender Email)</label>
+                    <div className="position-relative">
+                      <span className="position-absolute top-50 start-0 translate-middle-y ms-3 text-secondary">
+                        <Mail size={16} />
+                      </span>
                       <input 
                         type="email" 
-                        className="form-control form-control-custom" 
-                        value={settings.securityEmail || ''} 
-                        onChange={e => handleSettingChange('securityEmail', e.target.value)} 
+                        className="form-control form-control-custom ps-5" 
+                        placeholder="e.g. vdpersonal13@gmail.com"
+                        value={settings.systemEmail !== undefined ? settings.systemEmail : 'vdpersonal13@gmail.com'} 
+                        onChange={e => handleSettingChange('systemEmail', e.target.value)} 
+                        required
                       />
                     </div>
+                    <span className="form-text text-muted" style={{ fontSize: '11px' }}>
+                      This email address is used to dispatch approval requests to host employees and entry passes to visitors.
+                    </span>
                   </div>
 
                   <button type="submit" className="btn btn-primary-custom align-self-start mt-3 d-flex align-items-center gap-1.5">
