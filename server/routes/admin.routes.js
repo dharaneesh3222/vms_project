@@ -510,6 +510,21 @@ router.get('/analytics', async (req, res) => {
       }
     });
 
+    // Group visits by date (last 30 days - monthly view)
+    const monthlyVisits = {};
+    for (let i = 29; i >= 0; i--) {
+      const d = new Date();
+      d.setDate(d.getDate() - i);
+      const dateStr = d.toISOString().split('T')[0];
+      monthlyVisits[dateStr] = 0;
+    }
+    visits.forEach(v => {
+      const dateKey = v.scheduledDate;
+      if (monthlyVisits[dateKey] !== undefined) {
+        monthlyVisits[dateKey]++;
+      }
+    });
+
     // Group visits by purpose
     const purposeCount = {};
     visits.forEach(v => {
@@ -545,6 +560,7 @@ router.get('/analytics', async (req, res) => {
         checkedOut: checkedOutCount,
         pendingApprovals: pendingCount,
         availableRooms: availableRoomsCount,
+        totalRooms: rooms.length,
         totalEmployees: employees.length,
         securityAlerts: auditLogs.filter(log => log.action.includes('FAILED') || log.action.includes('BLOCKED')).length
       },
@@ -552,6 +568,10 @@ router.get('/analytics', async (req, res) => {
         daily: {
           labels: Object.keys(dailyVisits),
           data: Object.values(dailyVisits)
+        },
+        monthly: {
+          labels: Object.keys(monthlyVisits),
+          data: Object.values(monthlyVisits)
         },
         purpose: {
           labels: Object.keys(purposeCount),

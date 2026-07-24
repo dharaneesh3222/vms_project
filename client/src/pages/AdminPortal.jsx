@@ -39,6 +39,7 @@ export default function AdminPortal() {
   const [passwordForm, setPasswordForm] = useState({ id: '', name: '', newPassword: '' });
   const [showRoomModal, setShowRoomModal] = useState(false);
   const [roomForm, setRoomForm] = useState({ id: '', name: '', floor: '', capacity: 4, isAvailable: true });
+  const [chartView, setChartView] = useState('weekly'); // 'weekly' | 'monthly'
 
   const loadData = async () => {
     setError('');
@@ -315,10 +316,10 @@ export default function AdminPortal() {
   // CHART STYLING OPTIONS
   // ==========================================
   const lineChartData = analytics ? {
-    labels: analytics.charts.daily.labels,
+    labels: chartView === 'weekly' ? analytics.charts.daily.labels : analytics.charts.monthly.labels,
     datasets: [{
       label: 'Visitor Volume',
-      data: analytics.charts.daily.data,
+      data: chartView === 'weekly' ? analytics.charts.daily.data : analytics.charts.monthly.data,
       borderColor: '#8b5cf6',
       backgroundColor: 'rgba(139, 92, 246, 0.1)',
       tension: 0.3,
@@ -464,8 +465,11 @@ export default function AdminPortal() {
                 </div>
                 <div className="col-6 col-md-3">
                   <div className="glass-card p-3 d-flex align-items-center gap-3">
-                    <div className="stat-icon bg-danger bg-opacity-15 text-danger border border-danger border-opacity-25" style={{ width: '44px', height: '44px' }}><ShieldAlert size={18} /></div>
-                    <div><span className="small text-muted d-block" style={{ fontSize: '12px' }}>System Logs</span><span className="fs-5 fw-bold text-white">{analytics.summary.securityAlerts}</span></div>
+                    <div className="stat-icon bg-info bg-opacity-15 text-info border border-info border-opacity-25" style={{ width: '44px', height: '44px' }}><Layers size={18} /></div>
+                    <div>
+                      <span className="small text-muted d-block" style={{ fontSize: '12px' }}>Available Rooms</span>
+                      <span className="fs-5 fw-bold text-white">{analytics.summary.availableRooms} <span className="text-muted fs-6 fw-normal">/ {analytics.summary.totalRooms}</span></span>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -474,7 +478,23 @@ export default function AdminPortal() {
               <div className="row g-4">
                 <div className="col-lg-8">
                   <div className="glass-card p-4 mb-4" style={{ height: '320px' }}>
-                    <h4 className="fs-6 fw-bold text-white mb-3">Daily Visitor Traffic (Last 7 Days)</h4>
+                    <div className="d-flex justify-content-between align-items-center mb-3">
+                      <h4 className="fs-6 fw-bold text-white m-0">Visitor Traffic</h4>
+                      <div className="btn-group btn-group-sm" role="group">
+                        <button
+                          type="button"
+                          className={`btn btn-sm ${chartView === 'weekly' ? 'btn-primary' : 'btn-outline-secondary'}`}
+                          style={{ fontSize: '11px', borderRadius: '6px 0 0 6px' }}
+                          onClick={() => setChartView('weekly')}
+                        >Weekly</button>
+                        <button
+                          type="button"
+                          className={`btn btn-sm ${chartView === 'monthly' ? 'btn-primary' : 'btn-outline-secondary'}`}
+                          style={{ fontSize: '11px', borderRadius: '0 6px 6px 0' }}
+                          onClick={() => setChartView('monthly')}
+                        >Monthly</button>
+                      </div>
+                    </div>
                     <div className="w-100 h-100" style={{ maxHeight: '230px' }}>
                       <Line data={lineChartData} options={chartOptions} />
                     </div>
@@ -497,10 +517,6 @@ export default function AdminPortal() {
                       <div className="d-flex justify-content-between mb-1">
                         <span>Total Employees Registered:</span>
                         <span className="text-white fw-semibold">{analytics.summary.totalEmployees}</span>
-                      </div>
-                      <div className="d-flex justify-content-between">
-                        <span>Available Meeting Rooms:</span>
-                        <span className="text-white fw-semibold">{analytics.summary.availableRooms}</span>
                       </div>
                     </div>
                   </div>
