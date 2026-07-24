@@ -81,28 +81,16 @@ router.post('/walkin', async (req, res) => {
   }
 
   try {
-    // 1. Create or Update Visitor
-    let visitor = await db.findOne('visitors', { phoneNumber: phone });
-    if (!visitor) {
-      visitor = await db.insert('visitors', {
-        fullName,
-        email: email || '',
-        phoneNumber: phone,
-        company: company || '',
-        photoUrl: photoBase64 || '',
-        idDocumentUrl: idDocumentBase64 || '',
-        idType: idType || 'National ID'
-      });
-    } else {
-      visitor = await db.update('visitors', { id: visitor.id }, {
-        fullName,
-        email: email || visitor.email,
-        company: company || visitor.company,
-        photoUrl: photoBase64 || visitor.photoUrl,
-        idDocumentUrl: idDocumentBase64 || visitor.idDocumentUrl,
-        idType: idType || visitor.idType
-      });
-    }
+    // 1. Create Visitor (Always store new data for each visit to preserve history)
+    const visitor = await db.insert('visitors', {
+      fullName,
+      email: email || '',
+      phoneNumber: phone,
+      company: company || '',
+      photoUrl: photoBase64 || '',
+      idDocumentUrl: idDocumentBase64 || '',
+      idType: idType || 'National ID'
+    });
 
     const host = await db.findOne('employees', { id: hostEmployeeId });
     if (!host) {

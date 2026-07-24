@@ -101,30 +101,17 @@ router.post('/register', upload.fields([
       idDocumentUrl = idDocumentBase64;
     }
 
-    // 1. Create or Update Visitor
-    let visitor = await db.findOne('visitors', { phoneNumber: phone, orgId });
-    if (!visitor) {
-      visitor = await db.insert('visitors', {
-        orgId,
-        fullName,
-        email: email || '',
-        phoneNumber: phone,
-        company: company || '',
-        photoUrl,
-        idDocumentUrl,
-        idType: idType || 'National ID'
-      });
-    } else {
-      // Update details
-      visitor = await db.update('visitors', { id: visitor.id }, {
-        fullName,
-        email: email || visitor.email,
-        company: company || visitor.company,
-        photoUrl: photoUrl || visitor.photoUrl,
-        idDocumentUrl: idDocumentUrl || visitor.idDocumentUrl,
-        idType: idType || visitor.idType
-      });
-    }
+    // 1. Create Visitor (Always store new data for each visit to preserve history)
+    const visitor = await db.insert('visitors', {
+      orgId,
+      fullName,
+      email: email || '',
+      phoneNumber: phone,
+      company: company || '',
+      photoUrl,
+      idDocumentUrl,
+      idType: idType || 'National ID'
+    });
 
     // Fetch employee details to verify
     const host = await db.findOne('employees', { id: hostEmployeeId });
@@ -204,19 +191,28 @@ router.post('/register', upload.fields([
 router.get('/status/:phone', async (req, res) => {
   const { phone } = req.params;
   try {
-    const visitor = await db.findOne('visitors', { phoneNumber: phone });
-    if (!visitor) {
+    const visitors = await db.find('visitors', { phoneNumber: phone });
+    if (visitors.length === 0) {
       return res.status(404).json({ message: 'No visitor record found for this phone number' });
     }
 
-    const visits = await db.find('visits', { visitorId: visitor.id });
-    if (visits.length === 0) {
-      return res.status(404).json({ message: 'No visits found for this visitor' });
+    // Find all visits for all visitor profiles with this phone number
+    let allVisits = [];
+    for (const v of visitors) {
+      const vVisits = await db.find('visits', { visitorId: v.id });
+      allVisits = allVisits.concat(vVisits);
+    }
+
+    if (allVisits.length === 0) {
+      return res.status(404).json({ message: 'No visits found for this phone number' });
     }
 
     // Sort by date descending
-    visits.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
-    const latestVisit = visits[0];
+    allVisits.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
+    const latestVisit = allVisits[0];
+    
+    // Get the visitor record corresponding to the latest visit
+    const visitor = visitors.find(v => v.id === latestVisit.visitorId);
     
     const host = await db.findOne('employees', { id: latestVisit.hostEmployeeId });
 
