@@ -20,10 +20,8 @@ export default function SecurityPortal() {
   // Scanner States
   const [manualId, setManualId] = useState('');
   const [scannedVisit, setScannedVisit] = useState(null);
-  const [manualPhone, setManualPhone] = useState('');
   const [scanLoading, setScanLoading] = useState(false);
   const [gateBadge, setGateBadge] = useState('');
-  const [previewPhoto, setPreviewPhoto] = useState(null);
   const [cameraActive, setCameraActive] = useState(false);
   
   const scannerRef = useRef(null);
@@ -461,12 +459,7 @@ export default function SecurityPortal() {
                     {liveVisitors.map(v => (
                       <tr key={v.id} style={{ borderColor: 'var(--border-color)' }}>
                         <td>
-                          <div 
-                            className="rounded-circle overflow-hidden bg-black border cursor-pointer hover-opacity" 
-                            style={{ width: '36px', height: '36px', cursor: 'pointer' }}
-                            title="Click to View Photo"
-                            onClick={() => v.photoUrl && setPreviewPhoto({ url: v.photoUrl, name: v.visitorName, company: v.visitorCompany, phone: v.visitorPhone })}
-                          >
+                          <div className="rounded-circle overflow-hidden bg-black border" style={{ width: '36px', height: '36px' }}>
                             {v.photoUrl ? (
                               <img src={v.photoUrl} alt={v.visitorName} className="w-100 h-100" style={{ objectFit: 'cover' }} />
                             ) : (
@@ -552,27 +545,6 @@ export default function SecurityPortal() {
         )}
 
       </main>
-
-      {/* Image Preview Modal */}
-      {previewPhoto && (
-        <div className="modal fade show d-block" tabIndex="-1" style={{ backgroundColor: 'rgba(0, 0, 0, 0.85)', backdropFilter: 'blur(6px)', zIndex: 1060 }}>
-          <div className="modal-dialog modal-dialog-centered" style={{ maxWidth: '440px' }}>
-            <div className="glass-card modal-content border-secondary overflow-hidden text-center p-4">
-              <div className="d-flex justify-content-between align-items-center mb-3">
-                <h5 className="h6 text-white fw-bold m-0">{previewPhoto.name || 'Visitor Photo'}</h5>
-                <button type="button" className="btn-close btn-close-white" onClick={() => setPreviewPhoto(null)}></button>
-              </div>
-              <div className="rounded-3 overflow-hidden border border-secondary mb-3 bg-black" style={{ maxHeight: '380px' }}>
-                <img src={previewPhoto.url} alt="Visitor Photo" className="w-100 h-100" style={{ objectFit: 'contain' }} />
-              </div>
-              {previewPhoto.company && (
-                <p className="text-secondary small mb-3">{previewPhoto.company} · {previewPhoto.phone}</p>
-              )}
-              <button className="btn btn-outline-secondary btn-sm w-100" onClick={() => setPreviewPhoto(null)}>Close Preview</button>
-            </div>
-          </div>
-        </div>
-      )}
 
     </div>
   );
