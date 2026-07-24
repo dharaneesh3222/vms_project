@@ -483,9 +483,9 @@ export default function ReceptionistPortal() {
                     <label className="form-label small text-secondary">Allocate Meeting Room (Optional)</label>
                     <select className="form-select form-control-custom text-white" value={selectedRoomId} onChange={e => setSelectedRoomId(e.target.value)}>
                       <option value="">No Room (Direct to Host Desk)</option>
-                      {rooms.map(r => (
-                        <option key={r.id} value={r.id} disabled={!r.isAvailable}>
-                          {r.name} (Floor {r.floor} · Cap {r.capacity}) {!r.isAvailable && '— Occupied'}
+                      {rooms.filter(r => r.isAvailable).map(r => (
+                        <option key={r.id} value={r.id}>
+                          {r.name} (Floor {r.floor} · Cap {r.capacity})
                         </option>
                       ))}
                     </select>
