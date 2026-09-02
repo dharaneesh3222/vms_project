@@ -32,6 +32,10 @@ export const authMiddleware = async (req, res, next) => {
     });
   } catch (err) {
     console.error('Auth middleware error:', err);
-    return res.status(401).json({ message: 'Invalid or expired token' });
+    if (err.name === 'JsonWebTokenError' || err.name === 'TokenExpiredError') {
+      return res.status(401).json({ message: 'Invalid or expired token' });
+    }
+    // Database or network error should return 500 to prevent frontend from auto-logging out
+    return res.status(500).json({ message: 'Server error during authentication validation' });
   }
 };
