@@ -37,9 +37,13 @@ export default function ReceptionistPortal() {
   const loadData = async (isSilent = false) => {
     if (!isSilent) setError('');
     try {
+      const storedUser = localStorage.getItem('vms_user');
+      const orgId = storedUser ? JSON.parse(storedUser).orgId : 'default';
+      
       const queueData = await api.get('/receptionist/queue');
       const roomsData = await api.get('/receptionist/rooms');
-      const hostsData = await api.get('/visitors/hosts');
+      const hostsData = await api.get(`/visitors/hosts?orgId=${orgId}`);
+      
       setQueue(queueData);
       setRooms(roomsData);
       setHosts(hostsData);
