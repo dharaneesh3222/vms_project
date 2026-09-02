@@ -18,6 +18,17 @@ export default function App() {
   useEffect(() => {
     // Set default theme to premium dark on application load
     document.documentElement.setAttribute('data-theme', 'dark');
+    
+    // Listen for cross-tab login/logout events
+    const handleStorageChange = (e) => {
+      if (e.key === 'vms_token' || e.key === 'vms_user') {
+        // If the token or user changes in another tab, reload the page to enforce new permissions
+        window.location.reload();
+      }
+    };
+    
+    window.addEventListener('storage', handleStorageChange);
+    return () => window.removeEventListener('storage', handleStorageChange);
   }, []);
 
   return (
