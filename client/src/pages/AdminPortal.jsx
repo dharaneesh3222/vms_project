@@ -44,9 +44,9 @@ export default function AdminPortal() {
   const [roomForm, setRoomForm] = useState({ id: '', name: '', floor: '', capacity: 4, isAvailable: true });
   const [chartView, setChartView] = useState('weekly'); // 'weekly' | 'monthly'
 
-  const loadData = async () => {
-    setError('');
-    setLoading(true);
+  const loadData = async (isSilent = false) => {
+    if (!isSilent) setError('');
+    if (!isSilent) setLoading(true);
     try {
       if (activeTab === 'dashboard') {
         const data = await api.get('/admin/analytics');
@@ -68,9 +68,9 @@ export default function AdminPortal() {
         setLogs(data);
       }
     } catch (err) {
-      setError(err.message || 'Failed to fetch administration data.');
+      if (!isSilent) setError(err.message || 'Failed to fetch administration data.');
     } finally {
-      setLoading(false);
+      if (!isSilent) setLoading(false);
     }
   };
 
@@ -91,6 +91,10 @@ export default function AdminPortal() {
   useEffect(() => {
     if (user) {
       loadData();
+      
+      // Auto-refresh every 15 seconds for real-time updates
+      const intervalId = setInterval(() => loadData(true), 15000);
+      return () => clearInterval(intervalId);
     }
   }, [user, activeTab]);
 

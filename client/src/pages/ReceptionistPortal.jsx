@@ -34,8 +34,8 @@ export default function ReceptionistPortal() {
   const [selectedRoomId, setSelectedRoomId] = useState('');
   const [badgeNumber, setBadgeNumber] = useState('');
 
-  const loadData = async () => {
-    setError('');
+  const loadData = async (isSilent = false) => {
+    if (!isSilent) setError('');
     try {
       const queueData = await api.get('/receptionist/queue');
       const roomsData = await api.get('/receptionist/rooms');
@@ -47,9 +47,9 @@ export default function ReceptionistPortal() {
         setWalkinHostId(hostsData[0].id);
       }
     } catch (err) {
-      setError('Failed to load front-desk data. Please reload.');
+      if (!isSilent) setError('Failed to load front-desk data. Please reload.');
     } finally {
-      setLoading(false);
+      if (!isSilent) setLoading(false);
     }
   };
 
@@ -66,6 +66,10 @@ export default function ReceptionistPortal() {
     }
     setUser(parsedUser);
     loadData();
+
+    // Auto-refresh every 15 seconds for real-time updates
+    const intervalId = setInterval(() => loadData(true), 15000);
+    return () => clearInterval(intervalId);
   }, [navigate]);
 
   const handleLogout = () => {

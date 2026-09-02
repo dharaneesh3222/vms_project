@@ -28,9 +28,9 @@ export default function SecurityPortal() {
   
   const scannerRef = useRef(null);
 
-  const loadData = async () => {
-    setError('');
-    setLoading(true);
+  const loadData = async (isSilent = false) => {
+    if (!isSilent) setError('');
+    if (!isSilent) setLoading(true);
     try {
       if (activeTab === 'live') {
         const data = await api.get('/security/live');
@@ -40,9 +40,9 @@ export default function SecurityPortal() {
         setLogs(data);
       }
     } catch (err) {
-      setError('Failed to load security lists.');
+      if (!isSilent) setError('Failed to load security lists.');
     } finally {
-      setLoading(false);
+      if (!isSilent) setLoading(false);
     }
   };
 
@@ -61,6 +61,10 @@ export default function SecurityPortal() {
     
     if (activeTab !== 'scanner') {
       loadData();
+      
+      // Auto-refresh every 15 seconds for real-time updates
+      const intervalId = setInterval(() => loadData(true), 15000);
+      return () => clearInterval(intervalId);
     } else {
       setLoading(false);
     }

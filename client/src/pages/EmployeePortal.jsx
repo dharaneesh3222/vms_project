@@ -15,8 +15,8 @@ export default function EmployeePortal() {
   const [remarks, setRemarks] = useState({});
   const [error, setError] = useState('');
 
-  const loadData = async () => {
-    setError('');
+  const loadData = async (isSilent = false) => {
+    if (!isSilent) setError('');
     try {
       const pendingData = await api.get('/employee/pending');
       const visitsData = await api.get('/employee/visits');
@@ -29,9 +29,9 @@ export default function EmployeePortal() {
       setPending(pendingData);
       setVisits(visitsData);
     } catch (err) {
-      setError('Failed to load dashboard data. Please try again.');
+      if (!isSilent) setError('Failed to load dashboard data. Please try again.');
     } finally {
-      setLoading(false);
+      if (!isSilent) setLoading(false);
     }
   };
 
@@ -50,6 +50,10 @@ export default function EmployeePortal() {
       }
       setUser(parsedUser);
       loadData();
+      
+      // Auto-refresh every 15 seconds for real-time updates
+      const intervalId = setInterval(() => loadData(true), 15000);
+      return () => clearInterval(intervalId);
     } catch (err) {
       localStorage.removeItem('vms_user');
       localStorage.removeItem('vms_token');
